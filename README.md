@@ -171,3 +171,21 @@ git status
 ```
 ---
 
++ FEATURE: THUỘC TÍNH ( Dùng trong tiền xử lý dữ liệu)
+    + Numerical ( Số):
+        + Integer
+        + Float
+    + Categorical (Phân loại):
+        + Nomical: Định danh
+        + Ordinal: Thứ bậc
+        + Boolean: Logic
+
++ CÁC PHƯƠNG THỨC HỌC TRONG MACHINE LEARNING
+    + Supervised learning: Dùng dữ liệu có đánh nhãn (Với 1 input thì sẽ có 1 output label tương ứng để huấn luyện mô hình)
+        + Classification: Bài toán phân loại: Kết quả là 1 nhóm/ lớp (Vô hạn)
+        + Regression: Kết quả là 1 số ( Hữu hạn)
+    + UnSupervised learning: Dùng dữ liệu không đánh nhãn ( Unlabel data)
+        + Clustering: Bài toán phân nhóm/ phân cụm
+        (Là thuật toán để phân chia nhóm dữ liệu ra thành các nhóm nhỏ dự trên sự tương đồng giữa các dữ liệu trong mỗi nhóm con)
+        + Association: Bài toán tìm ra 1 quy luật nào đó dự trên dữ liệu cho trước
+    + Reinforcement learning: 
