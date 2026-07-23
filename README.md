@@ -189,3 +189,11 @@ git status
         (Là thuật toán để phân chia nhóm dữ liệu ra thành các nhóm nhỏ dự trên sự tương đồng giữa các dữ liệu trong mỗi nhóm con)
         + Association: Bài toán tìm ra 1 quy luật nào đó dự trên dữ liệu cho trước
     + Reinforcement learning: 
+
++ Supervised Learning: Học có giám sát
+     + Sample, item, record được xem là 1 hàng trong dataset
+     + Feature, Attribute, Independence: Cột không phải mang đi dự đoán
+     + Label (Target), dependence: Cột cần phải dự đoán
+     + Trong 1 sample khi tách ra: Những thành phần liên quan đến feature là: feature vector, ô liên quan đến target được gọi là corresponding label(target) 
+     + feature matrix (X) có 1 vector tương ứng label/ target vector (Y) độ dài chính là feature matrix
+     + Model training ( Huân luyện mô hình)
