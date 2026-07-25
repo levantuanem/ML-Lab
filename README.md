@@ -191,9 +191,19 @@ git status
     + Reinforcement learning: 
 
 + Supervised Learning: Học có giám sát
+     + Biến độc lập là feature, biến phụ thuộc là target
      + Sample, item, record được xem là 1 hàng trong dataset
      + Feature, Attribute, Independence: Cột không phải mang đi dự đoán
      + Label (Target), dependence: Cột cần phải dự đoán
      + Trong 1 sample khi tách ra: Những thành phần liên quan đến feature là: feature vector, ô liên quan đến target được gọi là corresponding label(target) 
      + feature matrix (X) có 1 vector tương ứng label/ target vector (Y) độ dài chính là feature matrix
+
      + Model training ( Huân luyện mô hình)
+     + Đưa feature vector và model để training sau đó đưa ra prediction, lấy prediction đó so sánh với label để tạo ra hàm loss ( hàm loss càng thấp thì model càng tốt). Lấy hàm loss cập nhật lại model
+     + Về sau khi mà feature vector ít quá => Cần đưa input vào bằng feature matrix
+
+    + Loss function: Hàm mất mát (Càng bé thì càng tốt)
+        + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
+        + Đối với bài toán regression: có 2 hàm loss phổ biến: 
+            + Loss L1
+            + Loss L2
