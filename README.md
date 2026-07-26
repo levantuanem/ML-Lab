@@ -205,5 +205,6 @@ git status
     + Loss function: Hàm mất mát (Càng bé thì càng tốt)
         + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
         + Đối với bài toán regression: có 2 hàm loss phổ biến: 
-            + Loss L1
-            + Loss L2
+            + Loss L1:
+                + Least absolute deviations
+            + Loss L2   
