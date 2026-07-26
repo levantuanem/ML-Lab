@@ -206,5 +206,19 @@ git status
         + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
         + Đối với bài toán regression: có 2 hàm loss phổ biến: 
             + Loss L1:
-                + Least absolute deviations
-            + Loss L2   
+                + Least absolute deviations (Độ lệch tuyệt đối tối thiểu)
+                + Absolute error (Độ lệch tuyệt đối)
+                + Mean of these Absolute etuyệt(Trung bình dộ lệch tuyệt đối)  
+            + Loss L2:
+                + Least square errors(Sai số bình phương nhỏ nhất)
+                + Squared error (Sai số bình phương)
+                + Mean of these Squared error ( Trung bình của sai số bình phương)  
+            + Điểm khác nhau: 
+                + L1: Dự đoán 10 căn nhà sai số 1 triệu sẽ tương đương dự đoán 1 căn nhà sai số 10 triệu (Nếu xây dựng mô hình thật chính xác. càng chính xác càng tốt chấp nhận vài trường hợp đi sai hẵn đi). Muốn dự đoán thật chính xác thì dùng L1
+                + L2: Dự đoán 1 căn nhà sai số 10 triệu bằng 100 căn nhà sai số 1 triệu (Dùng loss L2 khi muốn tối thiểu hóa những sai số lớn. Kiểu chấp nhận sai số nhưng sai số phải nhỏ). Muốn sai số nhỏ thì dùng L2
+                + huber loss: Nếu sai số nhỏ thì dùng L2, sai số lớn thì dùng L1
+    + Phân chia dataset:
+        + Training set: Tập này dùng để huấn luyện mô hình ( Loss được tính dựa vào prediction và label: Hàm loss dùng để update mô hình)
+        + Validation set: Tập này được dùng để trong quá trình huấn luyện, tại 1 thời điểm nhất định, ví dụ ở cuối 1 Epoch: 1 lần fit toàn bộ dữ liệu vào mô hình để đảm bảo rằng mô hình vẫn đang làm việc tốt (Loss dùng để xem mô hình có đang học tốt hay không, không dùng để update mô hình)
+        + Test set: Độ chính xác của mô hình dựa trên test set này 
+        + (60/20/20) (70/15/15) (90/5/5) Bộ validation và bộ test thường bằng nhau
