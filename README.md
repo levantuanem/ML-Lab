@@ -279,21 +279,21 @@ Các target của tất cả sample ghép lại thành Target Vector (Y).
 ```
 ---
 # 4. Data Preprocessing
-│   ├── Data Cleaning
-│   ├── Missing Values
-│   ├── Duplicate Data
-│   ├── Outlier
-│   ├── Encoding
-│   ├── Feature Scaling
-│   ├── Feature Selection
-│   ├── Feature Extraction
-│   └── Feature Engineering
+Data Cleaning
+Missing Values
+Duplicate Data
+Outlier
+Encoding
+Feature Scaling
+Feature Selection
+Feature Extraction
+Feature Engineering
 ---
 # 5. Exploratory Data Analysis (EDA)
-│   ├── Statistics
-│   ├── Visualization
-│   ├── Correlation
-│   └── Distribution
+Statistics
+Visualization
+Correlation
+Distribution
 ---
 # 6. Các phương thức học trong ML
 ```bash
@@ -410,31 +410,25 @@ Learning rate
 ```
 ---
 # 10. Model Improvement
-│   ├── Cross Validation
-│   ├── Hyperparameter Tuning
-│   ├── Regularization
-│   ├── Bias & Variance
-│   ├── Underfitting
-│   └── Overfitting
+Cross Validation
+Hyperparameter Tuning
+Regularization
+Bias & Variance
+Underfitting
+Overfitting
 ---
 # 11. Model Deployment
-│   ├── Save Model
-│   ├── Load Model
-│   ├── API
-│   └── Inference
+│Save Model
+│Load Model
+API
+Inference
 ---
 # 12. Deep Learning
-    ├── ANN
-    ├── CNN
-    ├── RNN
-    ├── LSTM
-    ├── Transformer
-    └── Transfer Learning
-    + Deep Learning
-    + ANN
-    + CNN
-    + RNN
-    + LSTM
-    + Transformer
+ANN
+CNN
+RNN
+LSTM
+Transformer
+Transfer Learning
 ---
    
