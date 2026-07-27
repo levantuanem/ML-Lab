@@ -262,16 +262,21 @@ Target (Label)
     + Trong bài toán Supervised Learning, mỗi sample đều có một Target tương ứng.
 ```
 ```bash
-Các feature của tất cả sample ghép lại thành Feature Matrix (X)
+Các feature của tất cả sample ghép lại thành Feature Matrix (X).
 Các target của tất cả sample ghép lại thành Target Vector (Y).
-
 ```
 ---
 # 3. Kiểu dữ liệu (Data Types)
-│   ├── Numerical
-│   ├── Categorical
-│   ├── Datetime
-│   └── Text
+```bash
++ FEATURE: THUỘC TÍNH
+    + Numerical ( Số):
+        + Integer
+        + Float
+    + Categorical (Phân loại):
+        + Nomical: Định danh
+        + Ordinal: Thứ bậc
+        + Boolean: Logic
+```
 ---
 # 4. Data Preprocessing
 │   ├── Data Cleaning
@@ -290,61 +295,32 @@ Các target của tất cả sample ghép lại thành Target Vector (Y).
 │   ├── Correlation
 │   └── Distribution
 ---
-# 6. Các phương thức học
-│   ├── Supervised Learning
-│   ├── Unsupervised Learning
-│   ├── Semi-supervised Learning
-│   └── Reinforcement Learning
+# 6. Các phương thức học trong ML
+```bash
+Supervised Learning
+    + Supervised Learning là phương pháp học sử dụng dữ liệu đã được gắn nhãn (Labeled Data).
+    + Mỗi sample trong dataset bao gồm:
+        + Input (Feature)
+        + Output (Target/Label)
+    + Mô hình sẽ học mối quan hệ giữa Feature và Target để có thể dự đoán Target cho những dữ liệu mới chưa từng xuất hiện.
+UnSupervised Learning
+    + Unsupervised Learning là phương pháp học sử dụng dữ liệu không được gắn nhãn (Unlabeled Data).
+    + Dataset chỉ chứa Feature, không có Target.
+    + Mục tiêu của mô hình là khám phá cấu trúc hoặc quy luật tiềm ẩn trong dữ liệu.
+Reinforcement Learning
+    + Reinforcement Learning là phương pháp học trong đó một tác nhân (Agent) tương tác với môi trường (Environment) để học cách đưa ra hành động tối ưu.
+    + Sau mỗi hành động, môi trường sẽ trả về:
+        + Reward (Phần thưởng) nếu hành động tốt.
+        + Penalty (Hình phạt) nếu hành động không tốt.
+    + Mục tiêu của Agent là tối đa hóa tổng phần thưởng nhận được theo thời gian.
+Semi-supervised Learning
+```
+## Supervised Learning
+## UnSupervised Learning
+## Semi-supervised Learning
+## Reinforcement Learning
 ---
 # 7. Thuật toán
-│   ├── Regression
-│   ├── Classification
-│   ├── Clustering
-│   ├── Dimensionality Reduction
-│   └── Ensemble Learning
----
-# 8. Model Training
-│   ├── Dataset Split
-│   ├── Batch
-│   ├── Epoch
-│   ├── Loss Function
-│   ├── Optimizer
-│   └── Learning Rate
----
-# 9. Model Evaluation
-│   ├── Confusion Matrix
-│   ├── Accuracy
-│   ├── Precision
-│   ├── Recall
-│   ├── F1-score
-│   ├── ROC-AUC
-│   ├── MAE
-│   ├── MSE
-│   ├── RMSE
-│   └── R²
----
-# 10. Model Improvement
-│   ├── Cross Validation
-│   ├── Hyperparameter Tuning
-│   ├── Regularization
-│   ├── Bias & Variance
-│   ├── Underfitting
-│   └── Overfitting
----
-# 11. Model Deployment
-│   ├── Save Model
-│   ├── Load Model
-│   ├── API
-│   └── Inference
----
-# 12. Deep Learning
-    ├── ANN
-    ├── CNN
-    ├── RNN
-    ├── LSTM
-    ├── Transformer
-    └── Transfer Learning
----
 ```bash
 Các Thuật Toán ML phổ biến
 + Regression
@@ -372,13 +348,51 @@ Các Thuật Toán ML phổ biến
     + PCA
     + t-SNE
     + UMAP
-+ Deep Learning
-    + ANN
-    + CNN
-    + RNN
-    + LSTM
-    + Transformer
 ```
+---
+# 8. Model Training
+```bash
+Training process
+```
+```bash
+Dataset split
+Phân chia dataset:
+    + Training set: Tập này dùng để huấn luyện mô hình ( Loss được tính dựa vào prediction và label: Hàm loss dùng để update mô hình)
+    + Validation set: Tập này được dùng để trong quá trình huấn luyện, tại 1 thời điểm nhất định, ví dụ ở cuối 1 Epoch: 1 lần fit toàn bộ dữ liệu vào mô hình để đảm bảo rằng mô hình vẫn đang làm việc tốt (Loss dùng để xem mô hình có đang học tốt hay không, không dùng để update mô hình)
+    + Test set: Độ chính xác của mô hình dựa trên test set này 
+    + (60/20/20) (70/15/15) (90/5/5) Bộ validation và bộ test thường bằng nhau
+```
+```bash
+Batch
+```
+```bash
+Epoch
+```
+```bash
+Loss Function: Hàm mất mát (Càng bé thì càng tốt)
+    + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
+    + Đối với bài toán regression: có 2 hàm loss phổ biến: 
+        + Loss L1:
+            + Least absolute deviations (Độ lệch tuyệt đối tối thiểu)
+            + Absolute error (Độ lệch tuyệt đối)
+            + Mean of these Absolute etuyệt(Trung bình dộ lệch tuyệt đối)  
+        + Loss L2:
+            + Least square errors(Sai số bình phương nhỏ nhất)
+            + Squared error (Sai số bình phương)
+            + Mean of these Squared error ( Trung bình của sai số bình phương)  
+        + Điểm khác nhau: 
+            + L1: Dự đoán 10 căn nhà sai số 1 triệu sẽ tương đương dự đoán 1 căn nhà sai số 10 triệu (Nếu xây dựng mô hình thật chính xác. càng chính xác càng tốt chấp nhận vài trường hợp đi sai hẵn đi). Muốn dự đoán thật chính xác thì dùng L1
+            + L2: Dự đoán 1 căn nhà sai số 10 triệu bằng 100 căn nhà sai số 1 triệu (Dùng loss L2 khi muốn tối thiểu hóa những sai số lớn. Kiểu chấp nhận sai số nhưng sai số phải nhỏ). Muốn sai số nhỏ thì dùng L2
+        + Huber loss: Nếu sai số nhỏ thì dùng L2, sai số lớn thì dùng L1
+```
+```bash
+Optimizer
+```
+```bash
+Learning rate
+```
+---
+# 9. Model Evaluation
 ```bash
 Đánh giá mô hình
 + Classification    
@@ -394,65 +408,33 @@ Các Thuật Toán ML phổ biến
     + RMSE
     + R² Score`
 ```
-# CÁC PHƯƠNG THỨC HỌC TRONG ML
-```bash
-Supervised Learning
-UnSupervised Learning
-Semi-supervised Learning
-Reinforcement Learning
-```
-## Supervised Learning
-## UnSupervised Learning
-## Semi-supervised Learning
-## Reinforcement Learning
-+ FEATURE: THUỘC TÍNH ( Dùng trong tiền xử lý dữ liệu)
-    + Numerical ( Số):
-        + Integer
-        + Float
-    + Categorical (Phân loại):
-        + Nomical: Định danh
-        + Ordinal: Thứ bậc
-        + Boolean: Logic
-
-+ CÁC PHƯƠNG THỨC HỌC TRONG MACHINE LEARNING
-    + Supervised learning: Dùng dữ liệu có đánh nhãn (Với 1 input thì sẽ có 1 output label tương ứng để huấn luyện mô hình)
-        + Classification: Bài toán phân loại: Kết quả là 1 nhóm/ lớp (Vô hạn)
-        + Regression: Kết quả là 1 số ( Hữu hạn)
-    + UnSupervised learning: Dùng dữ liệu không đánh nhãn ( Unlabel data)
-        + Clustering: Bài toán phân nhóm/ phân cụm
-        (Là thuật toán để phân chia nhóm dữ liệu ra thành các nhóm nhỏ dự trên sự tương đồng giữa các dữ liệu trong mỗi nhóm con)
-        + Association: Bài toán tìm ra 1 quy luật nào đó dự trên dữ liệu cho trước
-    + Reinforcement learning: 
-
-+ Supervised Learning: Học có giám sát
-     + Biến độc lập là feature, biến phụ thuộc là target
-     + Sample, item, record được xem là 1 hàng trong dataset
-     + Feature, Attribute, Independence: Cột không phải mang đi dự đoán
-     + Label (Target), dependence: Cột cần phải dự đoán
-     + Trong 1 sample khi tách ra: Những thành phần liên quan đến feature là: feature vector, ô liên quan đến target được gọi là corresponding label(target) 
-     + feature matrix (X) có 1 vector tương ứng label/ target vector (Y) độ dài chính là feature matrix
-
-     + Model training ( Huân luyện mô hình)
-     + Đưa feature vector và model để training sau đó đưa ra prediction, lấy prediction đó so sánh với label để tạo ra hàm loss ( hàm loss càng thấp thì model càng tốt). Lấy hàm loss cập nhật lại model
-     + Về sau khi mà feature vector ít quá => Cần đưa input vào bằng feature matrix
-
-    + Loss function: Hàm mất mát (Càng bé thì càng tốt)
-        + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
-        + Đối với bài toán regression: có 2 hàm loss phổ biến: 
-            + Loss L1:
-                + Least absolute deviations (Độ lệch tuyệt đối tối thiểu)
-                + Absolute error (Độ lệch tuyệt đối)
-                + Mean of these Absolute etuyệt(Trung bình dộ lệch tuyệt đối)  
-            + Loss L2:
-                + Least square errors(Sai số bình phương nhỏ nhất)
-                + Squared error (Sai số bình phương)
-                + Mean of these Squared error ( Trung bình của sai số bình phương)  
-            + Điểm khác nhau: 
-                + L1: Dự đoán 10 căn nhà sai số 1 triệu sẽ tương đương dự đoán 1 căn nhà sai số 10 triệu (Nếu xây dựng mô hình thật chính xác. càng chính xác càng tốt chấp nhận vài trường hợp đi sai hẵn đi). Muốn dự đoán thật chính xác thì dùng L1
-                + L2: Dự đoán 1 căn nhà sai số 10 triệu bằng 100 căn nhà sai số 1 triệu (Dùng loss L2 khi muốn tối thiểu hóa những sai số lớn. Kiểu chấp nhận sai số nhưng sai số phải nhỏ). Muốn sai số nhỏ thì dùng L2
-                + huber loss: Nếu sai số nhỏ thì dùng L2, sai số lớn thì dùng L1
-    + Phân chia dataset:
-        + Training set: Tập này dùng để huấn luyện mô hình ( Loss được tính dựa vào prediction và label: Hàm loss dùng để update mô hình)
-        + Validation set: Tập này được dùng để trong quá trình huấn luyện, tại 1 thời điểm nhất định, ví dụ ở cuối 1 Epoch: 1 lần fit toàn bộ dữ liệu vào mô hình để đảm bảo rằng mô hình vẫn đang làm việc tốt (Loss dùng để xem mô hình có đang học tốt hay không, không dùng để update mô hình)
-        + Test set: Độ chính xác của mô hình dựa trên test set này 
-        + (60/20/20) (70/15/15) (90/5/5) Bộ validation và bộ test thường bằng nhau
+---
+# 10. Model Improvement
+│   ├── Cross Validation
+│   ├── Hyperparameter Tuning
+│   ├── Regularization
+│   ├── Bias & Variance
+│   ├── Underfitting
+│   └── Overfitting
+---
+# 11. Model Deployment
+│   ├── Save Model
+│   ├── Load Model
+│   ├── API
+│   └── Inference
+---
+# 12. Deep Learning
+    ├── ANN
+    ├── CNN
+    ├── RNN
+    ├── LSTM
+    ├── Transformer
+    └── Transfer Learning
+    + Deep Learning
+    + ANN
+    + CNN
+    + RNN
+    + LSTM
+    + Transformer
+---
+   
