@@ -20,7 +20,6 @@ Kiểm tra trạng thái repository:
 ```bash
 git status
 ```
----
 # Bước 2. Tạo Virtual Environment
 Tạo môi trường Python riêng cho project để tránh xung đột thư viện giữa các dự án.
 ```bash
@@ -30,7 +29,6 @@ Sau khi thực hiện sẽ xuất hiện thư mục:
 ```text
 .venv/
 ```
----
 # Bước 3. Kích hoạt Virtual Environment
 ### Windows CMD
 ```cmd
@@ -44,7 +42,6 @@ Khi kích hoạt thành công, Terminal sẽ hiển thị:
 ```text
 (.venv)
 ```
----
 # Bước 4. Kiểm tra Python Environment
 Kiểm tra phiên bản Python:
 ```bash
@@ -58,7 +55,6 @@ where python
 ```text
 <Project_Path>\.venv\Scripts\python.exe
 ```
----
 # Bước 5. Cập nhật Pip
 Nâng cấp pip lên phiên bản mới nhất.
 ```bash
@@ -68,25 +64,21 @@ Kiểm tra:
 ```bash
 pip --version
 ```
----
 # Bước 6. Cài đặt các thư viện cần thiết
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn jupyter joblib
 ```
----
 # Bước 7. Lưu danh sách thư viện
 Xuất toàn bộ thư viện đang cài đặt vào file `requirements.txt`.
 ```bash
 pip freeze > requirements.txt
 ```
----
 # Bước 8. Tạo `.gitignore`
 Tạo file:
 ```text
 .gitignore
 ```
 Các file và thư mục trên sẽ không được Git theo dõi.
----
 # Bước 9. Tạo cấu trúc thư mục
 Tạo các thư mục cần thiết cho project.
 ```cmd
@@ -119,7 +111,6 @@ Project/
 └── reports/
     └── figures/
 ```
----
 # Bước 10. Commit đầu tiên
 Thêm toàn bộ file vào vùng staging.
 ```bash
@@ -129,7 +120,6 @@ Tạo commit đầu tiên.
 ```bash
 git commit -m "Initial project structure"
 ```
----
 # Bước 11. Đổi branch mặc định
 Đổi branch từ `master` sang `main`.
 ```bash
@@ -139,7 +129,6 @@ Kiểm tra:
 ```bash
 git branch
 ```
----
 # Bước 12. Kết nối GitHub Repository
 Thêm repository từ GitHub vào project.
 ```bash
@@ -149,7 +138,6 @@ Kiểm tra:
 ```bash
 git remote -v
 ```
----
 # Bước 13. Đẩy project lên GitHub
 ```bash
 git push -u origin main
@@ -160,7 +148,6 @@ git add .
 git commit -m "Update project"
 git push
 ```
----
 # Kiểm tra môi trường
 ```bash
 python --version
@@ -201,13 +188,104 @@ Thư viện python phổ biến
 ```
 ```bash
 Pipeline Machine Learning 
++ MÔ HÌNH 7 BƯỚC
+    + BƯỚC 1: Data collection: Thu thập dữ liệu
+    + BƯỚC 2: Statistics: Hiểu dữ liệu thông qua thống kê
+    + BƯỚC 3: Data preprocessing:  Tiền xử lý dữ liệu được chia thành 6 bước nhỏ
+        + B1: Data cleaning: Làm sạch dữ liệu
+        + B2: Dimensionality reduction: Giảm chiều dữ liệu
+        + B3: Feature enginneering: Lựa chọn đặc tính
+        + B4: Sampling data: Lấy mẫu dữ liệu
+            + Probability sampling: Dựa vào xác suất thống kê
+                + Simple random sample: Lấy mẫu bằng cách bốc bừa
+                + Systematic sample: Lấy mẫu theo quy tắc
+                + Statified sample: Lấy mẫu nhưng vẫn giữ được mức phân phối của data
+                + Cluster sample: Lấy mẫu theo nhóm
+            + Non-Probability sampling:  Không dựa vào xác suất thống kê
+                + Convenience sample: 
+                + Purposive sample: Lấy mẫu bằng cách tìm kiếm đối tượng khớp 
+                + Snowball sample: Lấy mẫu bằng cách 
+                + Quota sample: Lấy mẫu bằng cách
+        + B5: Data transformation
+            + Step 1: Smoothing
+            + Step 2: Aggregation
+            + Step 3: Discretization
+            + Step 4: Attribute construction
+            + Step 5: Generalization
+            + Step 6: Normalization 
+            + + + Type of data Visualization: 
+                    + Distribution plot
+                    + Box and whisker plot
+                    + Violin plot
+                    + Line plot
+                    + Histogram
+                    + Scatter plot
+                    + Pie chart
+                    + Area plot
+                    + Heatmap
+                    + Hexbin plot
+    + BƯỚC 6: Imbalanced data
+    + BƯỚC 4: Data visualization: Trực quan hóa dữ liệu
+        + B1: Develop your research question
+        + B2: Get or create your data
+        + B3: Clean your data
+        + B4: Choose a chart type
+        + B5: Choose your tool
+        + B6: Prepare data
+    + BƯỚC 5: Model building
+    + BƯỚC 6: Model evaluation 
+    + BƯỚC 7: Model deployment
 ```
 ```bash
 Các Thuật Toán ML phổ biến
++ Regression
+    + Linear Regression
+    + Polynomial Regression
+    + Ridge Regression
+    + Lasso Regression
++ Classification
+    + Logistic Regression
+    + KNN
+    + Decision Tree
+    + Random Forest
+    + SVM
+    + Naive Bayes
+    + Gradient Boosting
+    + XGBoost
+    + LightGBM
+    + CatBoost
++ Clustering
+    + K-Means
+    + DBSCAN
+    + Hierarchical Clustering
+    + Gaussian Mixture Model
++ Dimensionality Reduction
+    + PCA
+    + t-SNE
+    + UMAP
++ Deep Learning
+    + ANN
+    + CNN
+    + RNN
+    + LSTM
+    + Transformer
 ```
 ```bash
 Đánh giá mô hình
++ Classification    
+    + Accuracy
+    + Precision
+    + Recall
+    + F1-score
+    + ROC-AUC
+    + Confusion Matrix
++ Regression
+    + MAE
+    + MSE
+    + RMSE
+    + R² Score`
 ```
+# CÁC PHƯƠNG THỨC HỌC TRONG ML
 ## Supervised Learning
 ## UnSupervised Learning
 ## Semi-supervised Learning
