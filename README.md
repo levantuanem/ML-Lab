@@ -161,7 +161,7 @@ git status
 ---
 ---
 ---
-# TỔNG QUAN VỀ MACHINE LEARNING
+# 1. TỔNG QUAN VỀ MACHINE LEARNING
 ```bash
 AI là gì ?
 ```
@@ -236,6 +236,115 @@ Pipeline Machine Learning
     + BƯỚC 6: Model evaluation 
     + BƯỚC 7: Model deployment
 ```
+---
+# 2. DATASETS(DỮ LIỆU)
+```bash
+Dataset là tập hợp các dữ liệu được sử dụng để huấn luyện, đánh giá và kiểm thử mô hình Machine Learning.
+Một dataset thường được biểu diễn dưới dạng bảng (table), trong đó:
+    + Mỗi hàng (row) biểu diễn một mẫu dữ liệu (Sample).
+    + Mỗi cột (column) biểu diễn một thuộc tính (Feature) hoặc giá trị cần dự đoán (Target/Label).
+```
+```bash
+Sample: 
+    + Sample (hay còn gọi là Instance, Record, Observation hoặc Item) là một đối tượng dữ liệu trong dataset, được biểu diễn bởi một hàng.
+    + Mỗi sample chứa:
+        + Các giá trị của Feature
+        + Giá trị của Target (đối với bài toán Supervised Learning)
+```
+```bash
+Feature
+    + Feature (hay còn gọi là Attribute, Independent Variable hoặc Input Variable) là các thuộc tính đầu vào dùng để mô hình học và đưa ra dự đoán.
+    + Nói cách khác, Feature chính là thông tin mà mô hình được phép sử dụng để dự đoán Target.
+```
+```bash
+Target (Label)
+    + Target (hay còn gọi là Label, Dependent Variable hoặc Output) là giá trị mà mô hình cần dự đoán.
+    + Trong bài toán Supervised Learning, mỗi sample đều có một Target tương ứng.
+```
+```bash
+Các feature của tất cả sample ghép lại thành Feature Matrix (X)
+Các target của tất cả sample ghép lại thành Target Vector (Y).
+
+```
+---
+# 3. Kiểu dữ liệu (Data Types)
+│   ├── Numerical
+│   ├── Categorical
+│   ├── Datetime
+│   └── Text
+---
+# 4. Data Preprocessing
+│   ├── Data Cleaning
+│   ├── Missing Values
+│   ├── Duplicate Data
+│   ├── Outlier
+│   ├── Encoding
+│   ├── Feature Scaling
+│   ├── Feature Selection
+│   ├── Feature Extraction
+│   └── Feature Engineering
+---
+# 5. Exploratory Data Analysis (EDA)
+│   ├── Statistics
+│   ├── Visualization
+│   ├── Correlation
+│   └── Distribution
+---
+# 6. Các phương thức học
+│   ├── Supervised Learning
+│   ├── Unsupervised Learning
+│   ├── Semi-supervised Learning
+│   └── Reinforcement Learning
+---
+# 7. Thuật toán
+│   ├── Regression
+│   ├── Classification
+│   ├── Clustering
+│   ├── Dimensionality Reduction
+│   └── Ensemble Learning
+---
+# 8. Model Training
+│   ├── Dataset Split
+│   ├── Batch
+│   ├── Epoch
+│   ├── Loss Function
+│   ├── Optimizer
+│   └── Learning Rate
+---
+# 9. Model Evaluation
+│   ├── Confusion Matrix
+│   ├── Accuracy
+│   ├── Precision
+│   ├── Recall
+│   ├── F1-score
+│   ├── ROC-AUC
+│   ├── MAE
+│   ├── MSE
+│   ├── RMSE
+│   └── R²
+---
+# 10. Model Improvement
+│   ├── Cross Validation
+│   ├── Hyperparameter Tuning
+│   ├── Regularization
+│   ├── Bias & Variance
+│   ├── Underfitting
+│   └── Overfitting
+---
+# 11. Model Deployment
+│   ├── Save Model
+│   ├── Load Model
+│   ├── API
+│   └── Inference
+---
+# 12. Deep Learning
+    ├── ANN
+    ├── CNN
+    ├── RNN
+    ├── LSTM
+    ├── Transformer
+    └── Transfer Learning
+---
 ```bash
 Các Thuật Toán ML phổ biến
 + Regression
@@ -286,6 +395,12 @@ Các Thuật Toán ML phổ biến
     + R² Score`
 ```
 # CÁC PHƯƠNG THỨC HỌC TRONG ML
+```bash
+Supervised Learning
+UnSupervised Learning
+Semi-supervised Learning
+Reinforcement Learning
+```
 ## Supervised Learning
 ## UnSupervised Learning
 ## Semi-supervised Learning
