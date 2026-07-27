@@ -170,7 +170,41 @@ pip list
 git status
 ```
 ---
-
+# TỔNG QUAN VỀ MACHINE LEARNING
+```bash
+AI là gì ?
+```
+```bash
+ML là gì ?
+```
+```bash
+DL là gì ?
+```
+```bash
+Thư viện python phổ biến
+| Thư viện     | Mục đích                                 |
+| ------------ | ---------------------------------------- |
+| NumPy        | Tính toán ma trận, mảng số               |
+| Pandas       | Xử lý dữ liệu dạng bảng                  |
+| Matplotlib   | Vẽ biểu đồ                               |
+| Scikit-learn | Các thuật toán ML truyền thống           |
+| SciPy        | Tính toán khoa học                       |
+| XGBoost      | Gradient Boosting hiệu quả               |
+| LightGBM     | Gradient Boosting tối ưu cho dữ liệu lớn |
+| CatBoost     | Boosting xử lý tốt dữ liệu phân loại     |
+| TensorFlow   | Deep Learning                            |
+| PyTorch      | Deep Learning                            |
+```
+```bash
+Các Thuật Toán ML phổ biến
+```
+```bash
+Đánh giá mô hình
+```
+## Supervised Learning
+## UnSupervised Learning
+## Semi-supervised Learning
+## Reinforcement Learning
 + FEATURE: THUỘC TÍNH ( Dùng trong tiền xử lý dữ liệu)
     + Numerical ( Số):
         + Integer
