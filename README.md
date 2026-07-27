@@ -170,6 +170,10 @@ pip list
 git status
 ```
 ---
+---
+---
+---
+---
 # TỔNG QUAN VỀ MACHINE LEARNING
 ```bash
 AI là gì ?
@@ -194,6 +198,9 @@ Thư viện python phổ biến
 | CatBoost     | Boosting xử lý tốt dữ liệu phân loại     |
 | TensorFlow   | Deep Learning                            |
 | PyTorch      | Deep Learning                            |
+```
+```bash
+Pipeline Machine Learning 
 ```
 ```bash
 Các Thuật Toán ML phổ biến
