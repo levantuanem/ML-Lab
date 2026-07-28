@@ -315,6 +315,31 @@ Balance Data: Làm cân bằng dữ liệu
         + Ưu điểm: Huấn luyện nhanh hơn.
         + Nhược điểm: Mất thông tin do loại bỏ dữ liệu
 ```
+```bash
+Data Visualization
+Đồ thị đơn biến
++ Dùng thư viện matplotlib, seaborn
++ Histogram
+    df.hist()
+    plt.tight_layout()
+    plt.show()
++ Density plot
+    df.plot(kind='density', subplots= True, layout= (3, 3), sharex= False)
+    plt.tight_layout()
+    plt.show()
++ Box Plot
+    df.plot(kind='box', subplots= True, layout= (3, 3), sharex= False)
+    plt.tight_layout()
+    plt.show()
+Đồ thị đa biến
++ Correlation Matrix Plot (Dùng thư viện seaborn)
+    Đánh giá sự tương quan giữa các feature với nhau
+    sn.heatmap(df.corr(), annot= True)
+    plt.show()
++ Scatter Matrix Plot (Dùng thư viện from pandas.plotting import scatter_matrix)
+    scatter_matrix(df)
+    plt.show()
+```
 ---
 # 3. Kiểu dữ liệu (Data Types)
 ```bash
