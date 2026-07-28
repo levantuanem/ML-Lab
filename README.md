@@ -296,6 +296,25 @@ Mối quan hệ giữa các features
     + Thừa thãi
     + Làm 1 feature quan trọng trở thành không quan trọng
 ```
+```bash
+Balance Data: Làm cân bằng dữ liệu
+    + Oversampling (tăng số mẫu lớp thiểu số)
+        + Random Oversampling
+        + SMOTE
+        + ADASYN
+            + Ưu điểm:
+                + Không mất dữ liệu.
+                + Hữu ích khi dữ liệu ít.
+            + Nhược điểm:
+                + Có thể gây overfitting nếu chỉ sao chép dữ liệu.
+    + Undersampling (giảm số mẫu lớp đa số)
+        + Ví dụ:
+            + Class 0: 950
+            + Class 1: 50
+            + Giảm Class 0 xuống còn khoảng 50–100 mẫu.
+        + Ưu điểm: Huấn luyện nhanh hơn.
+        + Nhược điểm: Mất thông tin do loại bỏ dữ liệu
+```
 ---
 # 3. Kiểu dữ liệu (Data Types)
 ```bash
@@ -442,12 +461,24 @@ Learning rate
 ```
 ---
 # 10. Model Improvement
-+ Cross Validation
-+ Hyperparameter Tuning
-+ Regularization
-+ Bias & Variance
-+ Underfitting
-+ Overfitting
+```bash
+Cross Validation
+```
+```bash
+Hyperparameter Tuning
+```
+```bash
+Regularization
+```
+```bash
+Bias & Variance
+```
+```bash
+Underfitting
+```
+```bash
+Overfitting
+```
 ---
 # 11. Model Deployment
 + Save Model
