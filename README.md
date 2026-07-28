@@ -295,7 +295,6 @@ Mối quan hệ giữa các features
 + Mối quan hệ giữa 2 feature ((Multi)collinearity) thì lại không mong hệ số tương quan cao. Tại vì khi hệ số tương quan giữa 2 hay nhiều feature cao thì sẽ có rất nhiều ảnh hưởng tiêu cực đến xây dựng mô hình. Từ đó những vấn đề phát sinh ra do đa cộng tuyến bao gồm: 
     + Thừa thãi
     + Làm 1 feature quan trọng trở thành không quan trọng
-    + 
 ```
 ---
 # 3. Kiểu dữ liệu (Data Types)
