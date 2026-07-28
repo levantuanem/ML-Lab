@@ -265,6 +265,38 @@ Target (Label)
 Các feature của tất cả sample ghép lại thành Feature Matrix (X).
 Các target của tất cả sample ghép lại thành Target Vector (Y).
 ```
+```bash
+Mối quan hệ giữa các variables (features, target)
++ Correlation: Tương quan   
+    + Là mức độ 2 hay nhiều variables quan hệ tuyến tính với nhau
+    + Hệ số tương quan [-1,1]
+    + Tương quan âm (Negative Correlation)
+        + Khi X tăng thì Y giảm.
+        + Ví dụ:
+        + Giá sản phẩm ↑ → Số lượng bán ↓
+        + Tốc độ ↑ → Thời gian đi ↓
+    + Tương quan dương (Positive Correlation)   
+        + Khi X tăng thì Y cũng tăng.
+        + Ví dụ:
+        + Số giờ học ↑ → Điểm thi ↑
+        + Nhiệt độ ↑ → Doanh số kem ↑
+    + Hệ số tương quan = 0: Thì 2 biến này không có mối quan hệ tuyến tính với nhau
+    + Hệ số tương quan chỉ ra mức quan hệ tuyến tính giữa 2 hay nhiều biến với nhau. Nhưng không chỉ ra biến này thay đổi nên làm biến kia thay đổi hoặc ngược lại
+    => Giữa target và feature nếu có mối quan hệ tuyến tính với nhau thì lúc đấy sẽ có thiên hướng chọn lựa mô hình tuyến tính. Còn nếu không có mối quan hệ tuyến tính thì sử dụng các mô hình có tính phức tạp hơn, mô hình có thể học được mối quan hệ vượt qua bậc 1, 2, 3, ...,n
+```
+```bash
+Mối quan hệ giữa các features
++ (Multi)collinearity: Cộng tuyến/ Đa cộng tuyến
+    + Thể hiện 2 hay nhiều features có quan hệ tuyến tính với nhau
+    + Thông thường hệ số tương quan > 0.7 hoặc < -0.7 biểu thị rằng 2 hay nhiều features có hiện tượng (đa) cộng tuyến với nhau
+```
+```bash
++ Mối quan hệ giữa feature và target thì correlation (hệ số tương quan) có trị tuyệt đối càng cao càng tốt (có nghĩa là càng cần -1, 1 thì càng tốt). Vì khi có 1 hoặc 1 vài feature có mức độ tương quan mạnh với target thì lúc đó ta có thể dễ dàng chọn được các mô hình tuyến tính
++ Mối quan hệ giữa 2 feature ((Multi)collinearity) thì lại không mong hệ số tương quan cao. Tại vì khi hệ số tương quan giữa 2 hay nhiều feature cao thì sẽ có rất nhiều ảnh hưởng tiêu cực đến xây dựng mô hình. Từ đó những vấn đề phát sinh ra do đa cộng tuyến bao gồm: 
+    + Thừa thãi
+    + Làm 1 feature quan trọng trở thành không quan trọng
+    + 
+```
 ---
 # 3. Kiểu dữ liệu (Data Types)
 ```bash
@@ -279,21 +311,22 @@ Các target của tất cả sample ghép lại thành Target Vector (Y).
 ```
 ---
 # 4. Data Preprocessing
-Data Cleaning
-Missing Values
-Duplicate Data
-Outlier
-Encoding
-Feature Scaling
-Feature Selection
-Feature Extraction
-Feature Engineering
++ Data Cleaning
++ Missing Values
++ Duplicate Data
++ Outlier
++ Data Transformation
+<!-- + Encoding
++ Feature Scaling
++ Feature Selection
++ Feature Extraction
++ Feature Engineering -->
 ---
 # 5. Exploratory Data Analysis (EDA)
-Statistics
-Visualization
-Correlation
-Distribution
++ Statistics
++ Visualization
++ Correlation
++ Distribution
 ---
 # 6. Các phương thức học trong ML
 ```bash
@@ -406,29 +439,29 @@ Learning rate
     + MAE
     + MSE
     + RMSE
-    + R² Score`
+    + R² Score
 ```
 ---
 # 10. Model Improvement
-Cross Validation
-Hyperparameter Tuning
-Regularization
-Bias & Variance
-Underfitting
-Overfitting
++ Cross Validation
++ Hyperparameter Tuning
++ Regularization
++ Bias & Variance
++ Underfitting
++ Overfitting
 ---
 # 11. Model Deployment
-│Save Model
-│Load Model
-API
-Inference
++ Save Model
++ Load Model
++ API
++ Inference
 ---
 # 12. Deep Learning
-ANN
-CNN
-RNN
-LSTM
-Transformer
-Transfer Learning
++ ANN
++ CNN
++ RNN
++ LSTM
++ Transformer
++ Transfer Learning
 ---
    
