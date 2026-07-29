@@ -167,6 +167,7 @@ AI là gì ?
 ```
 ```bash
 ML là gì ?
++ Học máy là lĩnh vực nghiên cứu cung cấp cho máy tính khả năng học mà không cần lập trình rõ ràng
 ```
 ```bash
 DL là gì ?
@@ -427,7 +428,10 @@ Reinforcement Learning
     + Mục tiêu của Agent là tối đa hóa tổng phần thưởng nhận được theo thời gian.
 Semi-supervised Learning
 ```
-## Supervised Learning
+## Supervised Learning (HỌC CÓ GIÁM SÁT)
++ Đặc điểm chính của học có giám sát là cung cấp cho thuật toán học các ví dụ để học hỏi bao gồm các câu trả lời đúng (input -> outputlabel)
++ Thuật toán học cách chỉ lấy đầu vào input mà không cần nhãn đầu ra và đưa ra dự đoán tương đối chính xác về đầu ra
+
 + Regression (HỒI QUY): DỰA ĐOÁN NHỮNG GIÁ TRỊ LIÊN TỤC
     + Linear Regression (MÔ HÌNH HỒI QUY TUYẾN TÍNH)
         + Phù hợp với các bộ linear dataset
@@ -435,6 +439,7 @@ Semi-supervised Learning
         + Simple linear regression
         + Multi linear regression
     + Polynominal Regression (MÔ HÌNH HỒI QUY ĐA THỨC)
+    
 + Classification (PHÂN LOẠI)
     + Logistic Regression
     + Support Vector Machine*
