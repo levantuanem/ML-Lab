@@ -434,14 +434,25 @@ Semi-supervised Learning
 
 + Regression (HỒI QUY): DỰA ĐOÁN NHỮNG GIÁ TRỊ LIÊN TỤC
     + Linear Regression (MÔ HÌNH HỒI QUY TUYẾN TÍNH)
+        + Giả định mối quan hệ tuyến tính giữa feature và target
         + Phù hợp với các bộ linear dataset
+        + Dự đoán bằng một đường thẳng
         + Mô hình này rất nhạy cảm với các giá trị outliers
         + Simple linear regression
         + Multi linear regression
     + Polynominal Regression (MÔ HÌNH HỒI QUY ĐA THỨC)
-    
+        + Dùng khi dữ liệu có mối quan hệ phi tuyến
+        + Tạo thêm các đặc trưng đa thức 
+        + Degree (bậc đa thức):
+            + Degree = 2 (Quadratic)
+            + Degree = 3 (Cubic)
+            + Degree = n
+        + Gegree càng lớn -> Mô hình càng phức tạp
+        + Dễ bị overfiting nếu chọn degree quá cao
+        + Thực chất vẫn là Linear Regression sau khi biến đổi feature
 + Classification (PHÂN LOẠI)
     + Logistic Regression
+        + 
     + Support Vector Machine*
     + K-nearest neibours*
     + Naive Bayes
