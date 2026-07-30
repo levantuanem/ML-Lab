@@ -468,7 +468,27 @@ Semi-supervised Learning
         + Nhược điểm:
             + Chỉ học tốt khi ranh giới phân lớp gần tuyến tính
             + Nhạy cảm với outliers
-    + Support Vector Machine*
+    + Support Vector Machine* (SVM - MÁY VECTOR HỖ TRỢ)
+        + Thuật toán phân loại bằng cách tìm siêu phẳng (Hyperplane) tối ưu để phân tách các lớp dữ liệu
+        + Mục tiêu là tối đa hóa khoảng cách (Margin) giữa Hyperplane và các điểm dữ liệu gần nhất
+        + Các điểm gần Hyperplane nhất được gọi là Support Vectors
+        + Hoạt động rất tốt trên dữ liệu có số chiều cao (High-dimensional Data)
+        + Có thể xử lý dữ liệu không phân tách tuyến tính bằng Kernel Trick
+            + Linear Kernel
+            + Polynomial Kernel
+            + RBF (Gaussian) Kernel
+            + Sigmoid Kernel
+        + Có thể dùng cho:
+            + Classification
+            + Regression (SVR - Support Vector Regression)
+        + Ưu điểm:
+            + Hiệu quả trên tập dữ liệu vừa và nhỏ
+            + Khả năng tổng quát hóa tốt
+            + Ít bị Overfitting khi chọn tham số phù hợp
+        + Nhược điểm:
+            + Huấn luyện chậm với tập dữ liệu rất lớn
+            + Nhạy cảm với việc lựa chọn Kernel và các tham số (C, Gamma)
+            + Khó diễn giải hơn Decision Tree và Logistic Regression
     + K-nearest neibours*
     + Naive Bayes
     + Decision Tree*
