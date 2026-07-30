@@ -452,7 +452,22 @@ Semi-supervised Learning
         + Thực chất vẫn là Linear Regression sau khi biến đổi feature
 + Classification (PHÂN LOẠI)
     + Logistic Regression
-        + 
+        + Được xây dựng dựa trên Linear Regression
+        + Thay vì dự đoán trực tiếp giá trị liên tục, đầu ra được đưa qua hàm Sigmoid (Logistic Function)
+        + Hàm Sigmoid chuyển giá trị từ (-∞, +∞) về khoảng (0, 1)
+        + Giá trị đầu ra được hiểu là xác suất (Probability) thuộc lớp Positive
+        + Sử dụng một ngưỡng (Threshold), thường là 0.5, để đưa ra quyết định phân loại
+            + Probability ≥ 0.5 → Class 1
+            + Probability < 0.5 → Class 0
+        + Thích hợp cho bài toán Binary Classification
+        + Có thể mở rộng thành Multi-class Classification (One-vs-Rest hoặc Softmax)
+        + Ưu điểm:
+            + Đơn giản, dễ diễn giải
+            + Huấn luyện nhanh
+            + Dự đoán xác suất
+        + Nhược điểm:
+            + Chỉ học tốt khi ranh giới phân lớp gần tuyến tính
+            + Nhạy cảm với outliers
     + Support Vector Machine*
     + K-nearest neibours*
     + Naive Bayes
