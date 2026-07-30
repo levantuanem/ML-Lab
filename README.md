@@ -186,6 +186,23 @@ Thư viện python phổ biến
 | CatBoost     | Boosting xử lý tốt dữ liệu phân loại     |
 | TensorFlow   | Deep Learning                            |
 | PyTorch      | Deep Learning                            |
+
+
+import pandas as pd
+import numpy as np
+# pyrefly: ignore [missing-import]
+import pingouin as pg # Tính hệ số tương quan Pearson và p-value.
+import sys # Tương tác với hệ thống Python (tham số dòng lệnh, đường dẫn, thoát chương trình...).
+from scipy.stats import pearsonr, norm # Làm việc với phân phối chuẩn (Normal Distribution).
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import KFold # Chia dữ liệu thành K phần để Cross Validation.
+from sklearn.metrics import r2_score # Đánh giá mô hình hồi quy (Regression).
+from statsmodels.stats.outliers_influence import variance_inflation_factor # Kiểm tra đa cộng tuyến (Multicollinearity).
+from statsmodels.tools.tools import add_constant # Thêm cột hằng số (Intercept) cho mô hình của Statsmodels.
+from factor_analyzer.factor_analyzer import calculate_kmo # Kiểm tra dữ liệu có phù hợp để phân tích nhân tố (EFA) hay không.
+from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity # Kiểm định Bartlett trước khi làm EFA.
+from factor_analyzer import FactorAnalyzer # Phân tích nhân tố khám phá (Exploratory Factor Analysis - EFA).
+import matplotlib.pyplot as plt
 ```
 ```bash
 Pipeline Machine Learning 
