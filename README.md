@@ -449,7 +449,9 @@ Semi-supervised Learning
 + Đặc điểm chính của học có giám sát là cung cấp cho thuật toán học các ví dụ để học hỏi bao gồm các câu trả lời đúng (input -> outputlabel)
 + Thuật toán học cách chỉ lấy đầu vào input mà không cần nhãn đầu ra và đưa ra dự đoán tương đối chính xác về đầu ra
 
+
 + Regression (HỒI QUY): DỰA ĐOÁN NHỮNG GIÁ TRỊ LIÊN TỤC
+
     + Linear Regression (MÔ HÌNH HỒI QUY TUYẾN TÍNH)
         + Giả định mối quan hệ tuyến tính giữa feature và target
         + Phù hợp với các bộ linear dataset
@@ -457,6 +459,7 @@ Semi-supervised Learning
         + Mô hình này rất nhạy cảm với các giá trị outliers
         + Simple linear regression
         + Multi linear regression
+
     + Polynominal Regression (MÔ HÌNH HỒI QUY ĐA THỨC)
         + Dùng khi dữ liệu có mối quan hệ phi tuyến
         + Tạo thêm các đặc trưng đa thức 
@@ -467,7 +470,9 @@ Semi-supervised Learning
         + Gegree càng lớn -> Mô hình càng phức tạp
         + Dễ bị overfiting nếu chọn degree quá cao
         + Thực chất vẫn là Linear Regression sau khi biến đổi feature
+
 + Classification (PHÂN LOẠI)
+
     + Logistic Regression
         + Được xây dựng dựa trên Linear Regression
         + Thay vì dự đoán trực tiếp giá trị liên tục, đầu ra được đưa qua hàm Sigmoid (Logistic Function)
@@ -485,6 +490,7 @@ Semi-supervised Learning
         + Nhược điểm:
             + Chỉ học tốt khi ranh giới phân lớp gần tuyến tính
             + Nhạy cảm với outliers
+
     + Support Vector Machine* (SVM - MÁY VECTOR HỖ TRỢ)
         + Thuật toán phân loại bằng cách tìm siêu phẳng (Hyperplane) tối ưu để phân tách các lớp dữ liệu
         + Mục tiêu là tối đa hóa khoảng cách (Margin) giữa Hyperplane và các điểm dữ liệu gần nhất
@@ -506,6 +512,7 @@ Semi-supervised Learning
             + Huấn luyện chậm với tập dữ liệu rất lớn
             + Nhạy cảm với việc lựa chọn Kernel và các tham số (C, Gamma)
             + Khó diễn giải hơn Decision Tree và Logistic Regression
+
     + K-nearest neibours* (KNN - THUẬT TOÁN K LÁNG GIỀNG GẦN NHẤT)
         + Thuật toán dựa trên khoảng cách giữa các điểm dữ liệu
         + Chọn K điểm dữ liệu gần nhất với điểm cần dự đoán
@@ -521,6 +528,7 @@ Semi-supervised Learning
             + Euclidean Distance
             + Manhattan Distance
             + Minkowski Distance
+            
     + Naive Bayes (THUẬT TOÁN BAYES NGÂY THƠ)
         + Ý tưởng
             + Dựa trên Định lý Bayes để tính xác suất một mẫu thuộc từng class.
@@ -575,6 +583,7 @@ Semi-supervised Learning
             + Giả định các feature độc lập thường không đúng trong thực tế.
             + Hiệu quả giảm khi các feature có tương quan mạnh.
             + Không phù hợp với các bài toán có ranh giới phân lớp rất phức tạp.
+
     + Decision Tree* (CÂY QUYẾT ĐỊNH)
         + Ý tưởng
             + Mô phỏng quá trình ra quyết định bằng cấu trúc cây.
@@ -684,6 +693,7 @@ Semi-supervised Learning
                 + XGBoost.
                 + LightGBM.
                 + CatBoost.
+
     + Random Forest* (RỪNG NGẪU NHIÊN)
         + Ý tưởng
             + Kết hợp nhiều Decision Tree để tạo thành một mô hình mạnh hơn.
@@ -745,6 +755,60 @@ Semi-supervised Learning
             + Khó diễn giải hơn Decision Tree.
             + Mô hình lớn khi số lượng cây nhiều.
 ## UnSupervised Learning
+## Unsupervised Learning (HỌC KHÔNG GIÁM SÁT)
++ Định nghĩa
+    + Là phương pháp học máy sử dụng dữ liệu không có nhãn (Unlabeled Data).
+    + Mục tiêu là khám phá cấu trúc, quy luật hoặc mối quan hệ tiềm ẩn trong dữ liệu.
+    + Mô hình tự tìm ra các nhóm hoặc đặc trưng mà không có đáp án đúng để huấn luyện.
++ Đặc điểm
+    + Không có Output Label.
+    + Không thể tính trực tiếp Accuracy như Supervised Learning.
+    + Thường dùng để khám phá dữ liệu (Data Exploration).
+    + Có thể dùng như bước tiền xử lý trước khi huấn luyện mô hình Supervised Learning.
++ Các bài toán chính
+    + Clustering (Phân cụm)
+        + Gom các mẫu dữ liệu có đặc điểm giống nhau vào cùng một nhóm.
+        + Ví dụ:
+            + K-Means
+            + Hierarchical Clustering
+            + DBSCAN
+            + Gaussian Mixture Model (GMM)
+    + Dimensionality Reduction (Giảm số chiều dữ liệu)
+        + Giảm số lượng feature nhưng vẫn giữ lại phần lớn thông tin.
+        + Giúp giảm thời gian huấn luyện và trực quan hóa dữ liệu.
+        + Ví dụ:
+            + PCA
+            + t-SNE
+            + UMAP
+    + Association Rule Learning (Khai phá luật kết hợp)
+        + Tìm mối quan hệ giữa các mục dữ liệu.
+        + Ví dụ:
+            + Apriori
+            + FP-Growth
+    + Anomaly Detection (Phát hiện bất thường)
+        + Phát hiện các mẫu dữ liệu khác biệt so với phần lớn dữ liệu.
+        + Ví dụ:
+            + Isolation Forest
+            + One-Class SVM
+            + Local Outlier Factor (LOF)
++ Ưu điểm
+    + Không cần dữ liệu gán nhãn.
+    + Khám phá được cấu trúc tiềm ẩn trong dữ liệu.
+    + Hữu ích trong giai đoạn Exploratory Data Analysis (EDA).
+    + Có thể hỗ trợ Feature Engineering.
++ Nhược điểm
+    + Khó đánh giá chất lượng mô hình.
+    + Kết quả phụ thuộc vào thuật toán và tham số.
+    + Không đảm bảo các cụm tìm được có ý nghĩa trong thực tế.
++ Ứng dụng
+    + Phân khúc khách hàng.
+    + Hệ thống gợi ý.
+    + Phát hiện gian lận.
+    + Phân tích hành vi người dùng.
+    + Giảm chiều dữ liệu trước khi huấn luyện mô hình.
+    + Trực quan hóa dữ liệu nhiều chiều.
+
++ 
 ## Semi-supervised Learning
 ## Reinforcement Learning
 ---
