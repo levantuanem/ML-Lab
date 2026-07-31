@@ -808,7 +808,81 @@ Semi-supervised Learning
     + Giảm chiều dữ liệu trước khi huấn luyện mô hình.
     + Trực quan hóa dữ liệu nhiều chiều.
 
-+ 
++ K-Means Clustering (PHÂN CỤM K-TRUNG BÌNH)
+    + Thuật toán Unsupervised Learning.
+    + Thuộc nhóm Clustering (Phân cụm).
+    + Dùng để phân chia dữ liệu thành K cụm dựa trên mức độ tương đồng.
+    + Ý tưởng
+        + Chia dữ liệu thành K cụm (Cluster).
+        + Mỗi cụm được đại diện bởi một tâm cụm (Centroid).
+        + Mỗi điểm dữ liệu được gán vào cụm có Centroid gần nhất.
+        + Thuật toán liên tục cập nhật Centroid cho đến khi hội tụ.
+    + Thành phần
+        + Cluster
+            + Nhóm các điểm dữ liệu có đặc điểm giống nhau.
+        + Centroid
+            + Tâm của cụm.
+            + Được tính bằng trung bình của tất cả các điểm trong cụm.
+        + Distance Metric
+            + Dùng để đo khoảng cách giữa điểm dữ liệu và Centroid.
+            + Thường sử dụng:
+                + Euclidean Distance
+    + Quy trình hoạt động
+        + Chọn số lượng cụm K.
+        + Khởi tạo ngẫu nhiên K Centroid.
+        + Tính khoảng cách từ từng điểm dữ liệu đến các Centroid.
+        + Gán mỗi điểm vào Centroid gần nhất.
+        + Cập nhật Centroid bằng trung bình của các điểm trong cụm.
+        + Lặp lại cho đến khi:
+            + Centroid không còn thay đổi.
+            + Hoặc đạt số lần lặp tối đa.
+    + Hàm mục tiêu
+        + Giảm tổng khoảng cách bình phương giữa các điểm dữ liệu và Centroid.
+        + Mục tiêu là tạo các cụm có độ phân tán nhỏ nhất.
+    + Lựa chọn số cụm K
+        + Elbow Method
+            + Quan sát điểm "khuỷu tay" trên đồ thị.
+        + Silhouette Score
+            + Đánh giá mức độ phân tách giữa các cụm.
+        + Domain Knowledge
+            + Chọn K dựa trên kiến thức của bài toán.
+    + Hyperparameters quan trọng
+        + n_clusters
+            + Số lượng cụm.
+        + init
+            + Phương pháp khởi tạo Centroid.
+                + random
+                + k-means++
+        + n_init
+            + Số lần khởi tạo để tìm nghiệm tốt nhất.
+        + max_iter
+            + Số vòng lặp tối đa.
+        + random_state
+            + Cố định kết quả khi khởi tạo ngẫu nhiên.
+    + Đặc điểm
+        + Không cần dữ liệu có nhãn.
+        + Hoạt động tốt với dữ liệu có cụm dạng hình cầu.
+        + Nhạy cảm với vị trí khởi tạo Centroid.
+        + Nhạy cảm với Outliers.
+        + Cần Feature Scaling khi các feature có đơn vị khác nhau.
+    + Ưu điểm
+        + Đơn giản và dễ triển khai.
+        + Huấn luyện nhanh.
+        + Hoạt động tốt trên tập dữ liệu lớn.
+        + Dễ diễn giải kết quả.
+    + Nhược điểm
+        + Phải xác định trước số cụm K.
+        + Khó xử lý cụm có hình dạng phức tạp.
+        + Nhạy cảm với Outliers.
+        + Có thể hội tụ đến nghiệm cục bộ (Local Optimum).
+        + Kết quả phụ thuộc vào Centroid khởi tạo.
+    + Ứng dụng
+        + Phân khúc khách hàng.
+        + Phân nhóm sản phẩm.
+        + Phân tích hành vi người dùng.
+        + Phân cụm ảnh.
+        + Nén ảnh (Image Compression).
+        + Tiền xử lý dữ liệu.
 ## Semi-supervised Learning
 ## Reinforcement Learning
 ---
