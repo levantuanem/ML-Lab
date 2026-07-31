@@ -521,7 +521,60 @@ Semi-supervised Learning
             + Euclidean Distance
             + Manhattan Distance
             + Minkowski Distance
-    + Naive Bayes
+    + Naive Bayes (THUẬT TOÁN BAYES NGÂY THƠ)
+        + Ý tưởng
+            + Dựa trên Định lý Bayes để tính xác suất một mẫu thuộc từng class.
+            + Giả định các feature độc lập có điều kiện với nhau (Conditional Independence).
+            + Chọn class có xác suất hậu nghiệm (Posterior Probability) lớn nhất.
+        + Nguyên lý hoạt động
+            + Tính xác suất tiên nghiệm (Prior Probability) của từng class.
+            + Tính xác suất xuất hiện của từng feature trong mỗi class.
+            + Áp dụng Định lý Bayes để tính xác suất hậu nghiệm.
+            + So sánh xác suất của các class.
+            + Chọn class có xác suất cao nhất.
+        + Định lý Bayes
+            + Posterior Probability
+                + Xác suất thuộc class sau khi quan sát dữ liệu.
+            + Prior Probability
+                + Xác suất ban đầu của từng class.
+            + Likelihood
+                + Xác suất xuất hiện của feature khi biết class.
+            + Evidence
+                + Xác suất xuất hiện của dữ liệu quan sát.
+        + Giả định Naive (Conditional Independence)
+            + Các feature được giả sử độc lập với nhau khi đã biết class.
+            + Đây là giả định giúp việc tính toán trở nên đơn giản và nhanh.
+            + Trong thực tế giả định này thường không hoàn toàn đúng nhưng mô hình vẫn hoạt động khá tốt.
+        + Các loại Naive Bayes
+            + Gaussian Naive Bayes
+                + Dùng cho dữ liệu liên tục.
+                + Giả sử feature tuân theo phân phối chuẩn (Normal Distribution).
+            + Multinomial Naive Bayes
+                + Dùng cho dữ liệu đếm (Count Data).
+                + Thường dùng trong phân loại văn bản.
+            + Bernoulli Naive Bayes
+                + Dùng cho dữ liệu nhị phân (0/1).
+        + Hyperparameters quan trọng
+            + var_smoothing (GaussianNB)
+            + alpha (MultinomialNB, BernoulliNB)
+            + fit_prior
+        + Đặc điểm
+            + Dựa trên xác suất.
+            + Huấn luyện rất nhanh.
+            + Dự đoán rất nhanh.
+            + Hoạt động tốt với dữ liệu nhiều chiều.
+            + Không yêu cầu dữ liệu tuyến tính.
+            + Không dễ bị Overfitting.
+        + Ưu điểm
+            + Đơn giản.
+            + Dễ triển khai.
+            + Tốc độ huấn luyện nhanh.
+            + Hiệu quả với tập dữ liệu nhỏ.
+            + Đặc biệt tốt cho phân loại văn bản.
+        + Nhược điểm
+            + Giả định các feature độc lập thường không đúng trong thực tế.
+            + Hiệu quả giảm khi các feature có tương quan mạnh.
+            + Không phù hợp với các bài toán có ranh giới phân lớp rất phức tạp.
     + Decision Tree* (CÂY QUYẾT ĐỊNH)
         + Ý tưởng
             + Mô phỏng quá trình ra quyết định bằng cấu trúc cây.
