@@ -506,7 +506,21 @@ Semi-supervised Learning
             + Huấn luyện chậm với tập dữ liệu rất lớn
             + Nhạy cảm với việc lựa chọn Kernel và các tham số (C, Gamma)
             + Khó diễn giải hơn Decision Tree và Logistic Regression
-    + K-nearest neibours*
+    + K-nearest neibours* (KNN - THUẬT TOÁN K LÁNG GIỀNG GẦN NHẤT)
+        + Thuật toán dựa trên khoảng cách giữa các điểm dữ liệu
+        + Chọn K điểm dữ liệu gần nhất với điểm cần dự đoán
+        + Classification:
+            + Dự đoán theo đa số phiếu (Majority Voting)
+        + Regression:
+            + Dự đoán bằng trung bình giá trị của K láng giềng
+        + Giá trị K:
+            + K nhỏ → Dễ Overfitting
+            + K lớn → Dễ Underfitting
+        + Cần chuẩn hóa dữ liệu (Feature Scaling)
+        + Các khoảng cách thường dùng:
+            + Euclidean Distance
+            + Manhattan Distance
+            + Minkowski Distance
     + Naive Bayes
     + Decision Tree*
     + Random Forest*
