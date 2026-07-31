@@ -522,7 +522,115 @@ Semi-supervised Learning
             + Manhattan Distance
             + Minkowski Distance
     + Naive Bayes
-    + Decision Tree*
+    + Decision Tree* (CÂY QUYẾT ĐỊNH)
+        + Ý tưởng
+            + Mô phỏng quá trình ra quyết định bằng cấu trúc cây.
+            + Chia dữ liệu thành các tập con theo các điều kiện của feature.
+            + Mục tiêu là tạo ra các node có độ thuần khiết (Purity) cao nhất.
+            + Quá trình chia được thực hiện theo phương pháp đệ quy (Recursive Partitioning).
+        + Cấu trúc của cây
+            + Root Node
+                + Nút đầu tiên của cây.
+                + Chứa toàn bộ dữ liệu huấn luyện.
+                + Là nơi bắt đầu tìm feature tốt nhất để phân chia dữ liệu.
+            + Internal Node
+                + Các nút trung gian.
+                + Mỗi node chứa một điều kiện kiểm tra trên một feature.
+                + Mỗi lần chia sẽ tạo ra các node con có độ thuần khiết cao hơn.
+            + Branch
+                + Nhánh nối giữa các node.
+                + Đại diện cho kết quả của điều kiện kiểm tra.
+            + Leaf Node
+                + Nút cuối cùng.
+                + Không tiếp tục phân chia.
+                + Chứa kết quả dự đoán.
+                    + Classification: Nhãn (Class Label)
+                    + Regression: Giá trị dự đoán
+        + Quá trình xây dựng cây
+            + Bắt đầu từ Root Node.
+            + Xét toàn bộ feature có trong tập dữ liệu.
+            + Thử tất cả các điểm chia (Split Point) có thể trên từng feature.
+            + Đánh giá chất lượng của từng phép chia bằng một hàm đo (Split Criterion).
+            + Chọn feature và điểm chia tối ưu.
+            + Chia dữ liệu thành các node con.
+            + Lặp lại quá trình trên từng node con (Recursive Splitting).
+            + Dừng khi đạt điều kiện dừng.
+        + Tiêu chí đánh giá phép chia (Split Criterion)
+            + Classification
+                + Gini Index
+                    + Đo mức độ không thuần khiết (Impurity) của node.
+                    + Giá trị càng nhỏ thì node càng thuần khiết.
+                    + Được sử dụng trong thuật toán CART.
+                + Entropy
+                    + Đo mức độ hỗn loạn của dữ liệu.
+                    + Entropy càng nhỏ thì dữ liệu càng thuần.
+                + Information Gain
+                    + Là lượng Entropy giảm sau khi chia.
+                    + Chọn phép chia có Information Gain lớn nhất.
+            + Regression
+                + Mean Squared Error (MSE)
+                + Mean Absolute Error (MAE)
+                + Variance Reduction
+                    + Chọn phép chia làm giảm phương sai nhiều nhất.
+        + Điều kiện dừng (Stopping Criteria)
+            + Tất cả mẫu trong node thuộc cùng một class.
+            + Không còn feature hoặc không còn điểm chia phù hợp.
+            + Đạt max_depth.
+            + Số lượng mẫu nhỏ hơn min_samples_split.
+            + Số lượng mẫu trong node nhỏ hơn min_samples_leaf.
+            + Mức giảm Impurity không đủ lớn.
+        + Hyperparameters quan trọng
+            + criterion
+                + gini
+                + entropy
+                + log_loss
+                + squared_error (Regression)
+            + max_depth
+                + Giới hạn chiều sâu của cây.
+            + min_samples_split
+                + Số mẫu tối thiểu để tiếp tục chia node.
+            + min_samples_leaf
+                + Số mẫu tối thiểu tại một Leaf Node.
+            + max_features
+                + Số lượng feature được xem xét tại mỗi lần chia.
+            + max_leaf_nodes
+                + Giới hạn số lượng Leaf Node.
+            + splitter
+                + best
+                + random
+        + Đặc điểm
+            + Không yêu cầu Feature Scaling.
+            + Không yêu cầu dữ liệu tuyến tính.
+            + Xử lý được dữ liệu số và dữ liệu phân loại.
+            + Mô hình hóa được các mối quan hệ phi tuyến.
+            + Có khả năng học các tương tác giữa các feature.
+            + Có thể đánh giá Feature Importance.
+            + Dễ trực quan hóa và diễn giải.
+        + Ưu điểm
+            + Dễ hiểu và dễ giải thích.
+            + Không cần chuẩn hóa dữ liệu.
+            + Có thể xử lý Missing Value (ở một số triển khai).
+            + Hoạt động tốt với dữ liệu phi tuyến.
+            + Huấn luyện tương đối nhanh.
+        + Nhược điểm
+            + Dễ Overfitting khi cây quá sâu.
+            + Không ổn định với dữ liệu huấn luyện.
+            + Dễ thiên vị các feature có nhiều giá trị phân chia.
+            + Độ chính xác của một cây đơn thường không cao bằng các mô hình Ensemble.
+        + Giảm Overfitting
+            + Pre-pruning
+                + Giới hạn max_depth.
+                + Tăng min_samples_split.
+                + Tăng min_samples_leaf.
+                + Giới hạn max_leaf_nodes.
+            + Post-pruning
+                + Cost Complexity Pruning (CCP Pruning).
+            + Ensemble Learning
+                + Random Forest.
+                + Gradient Boosting.
+                + XGBoost.
+                + LightGBM.
+                + CatBoost.
     + Random Forest*
 ## UnSupervised Learning
 ## Semi-supervised Learning
