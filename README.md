@@ -571,7 +571,7 @@ Semi-supervised Learning
                 + Mean Squared Error (MSE)
                 + Mean Absolute Error (MAE)
                 + Variance Reduction
-                    + Chọn phép chia làm giảm phương sai nhiều nhất.
+                + Chọn phép chia làm giảm phương sai nhiều nhất.
         + Điều kiện dừng (Stopping Criteria)
             + Tất cả mẫu trong node thuộc cùng một class.
             + Không còn feature hoặc không còn điểm chia phù hợp.
@@ -631,7 +631,66 @@ Semi-supervised Learning
                 + XGBoost.
                 + LightGBM.
                 + CatBoost.
-    + Random Forest*
+    + Random Forest* (RỪNG NGẪU NHIÊN)
+        + Ý tưởng
+            + Kết hợp nhiều Decision Tree để tạo thành một mô hình mạnh hơn.
+            + Mỗi cây được huấn luyện trên một tập dữ liệu ngẫu nhiên (Bootstrap Sampling).
+            + Mỗi lần chia node chỉ xét một tập con ngẫu nhiên của các feature.
+            + Kết quả cuối cùng được tổng hợp từ tất cả các cây.
+        + Quá trình xây dựng mô hình
+            + Tạo N tập dữ liệu bằng Bootstrap Sampling (lấy mẫu có hoàn lại).
+            + Huấn luyện một Decision Tree trên mỗi tập dữ liệu.
+            + Tại mỗi node:
+                + Chọn ngẫu nhiên một số feature.
+                + Tìm feature tốt nhất trong tập feature được chọn.
+                + Chia node theo tiêu chí tối ưu.
+            + Lặp lại cho đến khi xây dựng đủ số lượng cây.
+        + Quá trình dự đoán
+            + Classification
+                + Mỗi cây đưa ra một dự đoán.
+                + Kết quả cuối cùng được quyết định bằng Majority Voting.
+            + Regression
+                + Mỗi cây đưa ra một giá trị dự đoán.
+                + Kết quả cuối cùng là giá trị trung bình của tất cả các cây.
+        + Các kỹ thuật chính
+            + Bootstrap Sampling (Bagging)
+                + Tạo nhiều tập dữ liệu ngẫu nhiên từ tập huấn luyện.
+            + Random Feature Selection
+                + Mỗi node chỉ xem xét một số feature ngẫu nhiên.
+            + Majority Voting
+                + Áp dụng cho Classification.
+            + Averaging
+                + Áp dụng cho Regression.
+        + Hyperparameters quan trọng
+            + n_estimators
+                + Số lượng Decision Tree.
+            + criterion
+                + gini
+                + entropy
+                + squared_error (Regression)
+            + max_depth
+            + min_samples_split
+            + min_samples_leaf
+            + max_features
+            + bootstrap
+            + random_state
+        + Đặc điểm
+            + Không cần Feature Scaling.
+            + Xử lý tốt dữ liệu tuyến tính và phi tuyến.
+            + Giảm Overfitting so với Decision Tree.
+            + Có thể đánh giá Feature Importance.
+            + Hoạt động tốt trên dữ liệu có nhiều feature.
+        + Ưu điểm
+            + Độ chính xác cao.
+            + Ít bị Overfitting.
+            + Chịu được nhiễu và Outliers tốt hơn Decision Tree.
+            + Có khả năng xử lý dữ liệu lớn.
+            + Ít cần tinh chỉnh tham số hơn nhiều thuật toán khác.
+        + Nhược điểm
+            + Thời gian huấn luyện lâu hơn Decision Tree.
+            + Tiêu tốn nhiều bộ nhớ.
+            + Khó diễn giải hơn Decision Tree.
+            + Mô hình lớn khi số lượng cây nhiều.
 ## UnSupervised Learning
 ## Semi-supervised Learning
 ## Reinforcement Learning
