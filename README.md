@@ -203,6 +203,12 @@ from factor_analyzer.factor_analyzer import calculate_kmo # Kiểm tra dữ li�
 from factor_analyzer.factor_analyzer import calculate_bartlett_sphericity # Kiểm định Bartlett trước khi làm EFA.
 from factor_analyzer import FactorAnalyzer # Phân tích nhân tố khám phá (Exploratory Factor Analysis - EFA).
 import matplotlib.pyplot as plt
+
+import joblib: Đây là thư viện để lưu và đọc các đối tượng Python, đặc biệt là các mô hình Machine Learning.
+    + Sau khi train xong, muốn lưu: joblib.dump(model,"models/logistic_model.pkl")
+    -> Sẽ tạo file: models/ logistic_model.pkl
+    + Sau này không cần train lại, chỉ cần dùng: 
+    model = joblib.load("modelslogistic_model.pkl")
 ```
 ```bash
 Pipeline Machine Learning 
