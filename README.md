@@ -943,6 +943,8 @@ Batch
 ```
 ```bash
 Epoch
+    + Epoch là gì
+    + Quan hệ giữa Epoch, Batch và Iteration
 ```
 ```bash
 Loss Function: Hàm mất mát (Càng bé thì càng tốt)
@@ -963,9 +965,19 @@ Loss Function: Hàm mất mát (Càng bé thì càng tốt)
 ```
 ```bash
 Optimizer
+    + Gradient Descent
+    + SGD
+    + Momentum
+    + RMSProp
+    + Adam
+    + AdamW
 ```
 ```bash
 Learning rate
+    + Learning Rate là gì
+    + Learning Rate quá lớn
+    + Learning Rate quá nhỏ
+    + Learning Rate Scheduler
 ```
 ```bash
 Dataset Split (Phân chia dữ liệu): Mục đích của việc chia dataset là để đánh giá khả năng tổng quát hóa (generalization) của mô hình trên dữ liệu chưa từng nhìn thấy.
@@ -1025,6 +1037,58 @@ Dataset Split (Phân chia dữ liệu): Mục đích của việc chia dataset l
     + Thông thường:
         + K = 5 là lựa chọn phổ biến nhất.
         + K = 10 được dùng khi muốn đánh giá kỹ hơn nhưng chi phí tính toán cao hơn.
+```
+```bash
+Hyperparameter Tuning
+    + Hyperparameter là gì:
+        + Hyperparameter là các tham số được thiết lập trước khi huấn luyện mô hình.
+        + Không được học từ dữ liệu.
+        + Ảnh hưởng đến quá trình học và hiệu suất của mô hình.
+    + Parameter vs Hyperparameter
+        + Parameter
+            + Được mô hình tự học trong quá trình train.
+            + Ví dụ:
+                + Weight
+                + Bias
+        + Hyperparameter
+            + Do người dùng thiết lập.
+            + Ví dụ:
+                + Learning Rate
+                + Batch Size
+                + Epoch
+                + n_estimators
+                + max_depth
+                + k (KNN)
+                + C (SVM)
+    + Tại sao cần Hyperparameter Tuning?
+        + Mỗi bộ Hyperparameter cho kết quả khác nhau.
+        + Giúp tìm bộ tham số tối ưu.
+        + Cải thiện Accuracy/F1/AUC...
+        + Giảm Overfitting hoặc Underfitting.
+    + Search Methods
+        + Manual Search
+        + Grid Search
+        + Random Search
+        + Bayesian Optimization 
+    + Grid Search
+        + Thử tất cả các tổ hợp Hyperparameter.
+        + Tìm kết quả tốt nhất.
+        + Chính xác nhưng chậm.
+    + Random Search
+        + Chọn ngẫu nhiên một số tổ hợp Hyperparameter.
+        + Nhanh hơn Grid Search.
+        + Phù hợp khi không gian tìm kiếm lớn.
+    + GridSearchCV
+        + Grid Search + K-Fold Cross Validation.
+        + Tự động tìm bộ Hyperparameter tốt nhất.
+        + Các thuộc tính:
+            + best_params_
+            + best_score_
+            + best_estimator_
+    + RandomizedSearchCV
+        + Random Search + K-Fold Cross Validation.
+        + Chỉ thử một số tổ hợp ngẫu nhiên.
+        + Nhanh hơn GridSearchCV.
 ```
 ---
 # 9. Model Evaluation
