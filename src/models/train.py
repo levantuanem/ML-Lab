@@ -37,3 +37,5 @@ cm = np.array(confusion_matrix(y_test, y_pred, labels= [0, 1]))
 confusion = pd.DataFrame(cm, index= [i for i in ["Not Diabetic", "Diabetic"]], columns= [i for i in ["Predicted Not Diabetic", "Predicted Diabetic"]])
 sns.heatmap(confusion, annot=True, fmt='g')
 plt.savefig(r"D:\AI_Projects\Project_1\reports\figures\confusion_matrix.png") # hàng là giá trị thực tế, cột là giá trị dự đoán
+
+# 1h26p

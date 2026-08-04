@@ -927,12 +927,63 @@ Các Thuật Toán ML phổ biến
 Training process
 ```
 ```bash
-Dataset split
-Phân chia dataset:
-    + Training set: Tập này dùng để huấn luyện mô hình ( Loss được tính dựa vào prediction và label: Hàm loss dùng để update mô hình)
-    + Validation set: Tập này được dùng để trong quá trình huấn luyện, tại 1 thời điểm nhất định, ví dụ ở cuối 1 Epoch: 1 lần fit toàn bộ dữ liệu vào mô hình để đảm bảo rằng mô hình vẫn đang làm việc tốt (Loss dùng để xem mô hình có đang học tốt hay không, không dùng để update mô hình)
-    + Test set: Độ chính xác của mô hình dựa trên test set này 
-    + (60/20/20) (70/15/15) (90/5/5) Bộ validation và bộ test thường bằng nhau
+Dataset Split (Phân chia dữ liệu): Mục đích của việc chia dataset là để đánh giá khả năng tổng quát hóa (generalization) của mô hình trên dữ liệu chưa từng nhìn thấy.
++ Training Set
+    + Dùng để huấn luyện (train) mô hình.
+    + Mô hình thực hiện:
+        + Forward propagation.
+        + Tính Loss giữa Prediction và Ground Truth (Label).
+        + Backpropagation.
+        + Cập nhật trọng số (Weights) bằng Optimizer.
+    + Đây là tập duy nhất được dùng để cập nhật mô hình.
++ Validation Set: Dùng để đánh giá mô hình trong quá trình huấn luyện.    
+    + Thường được đánh giá:
+        + Sau mỗi Epoch.
+        + Hoặc sau một số bước (Steps).
+    + Mục đích:
+        + Theo dõi khả năng học của mô hình.
+        + Phát hiện Overfitting hoặc Underfitting.
+        + Điều chỉnh Hyperparameters:
+            + Learning Rate
+            + Batch Size
+            + Number of Epochs
+            + Optimizer
+            + Network Architecture
+        + Dùng cho Early Stopping.
+    + Validation Loss không được dùng để cập nhật trọng số.
++ Test Set: Chỉ được sử dụng sau khi mô hình đã huấn luyện hoàn tất.
+    + Dùng để đánh giá hiệu suất cuối cùng của mô hình trên dữ liệu hoàn toàn mới.
+    + Các chỉ số thường dùng:
+        + Accuracy
+        + Precision
+        + Recall
+        + F1-score
+        + ROC-AUC
+        + MSE, RMSE (Regression)
+    + Test Set chỉ nên sử dụng một lần để đánh giá cuối cùng, tránh dùng để điều chỉnh mô hình.
++ Tỷ lệ chia dữ liệu
+    + Một số tỷ lệ phổ biến:
+        60% / 20% / 20%
+        70% / 15% / 15%
+        80% / 10% / 10%
+        90% / 5% / 5% (khi dữ liệu rất lớn)
+    + Thông thường:
+        + Validation và Test thường có kích thước tương đương nhau.
+        + Không có quy tắc bắt buộc; tỷ lệ phụ thuộc vào kích thước dataset.
++ K-Fold Cross Validation là kỹ thuật đánh giá mô hình bằng cách chia dataset thành K phần (K folds) có kích thước gần bằng nhau.
+    + Quy trình:
+        + Chia dataset thành K tập.
+        + Chọn 1 fold làm Validation.
+        + K−1 folds còn lại dùng để Train.
+        + Huấn luyện và đánh giá mô hình.
+        + Lặp lại đến khi mỗi fold đều được sử dụng làm Validation đúng 1 lần.
+        + Lấy trung bình kết quả của K lần đánh giá.
++ Khi nào dùng K-Fold?
+    + Dataset nhỏ → Nên dùng K-Fold Cross Validation.
+    + Dataset lớn → Thường chỉ cần Train/Validation/Test Split vì K-Fold sẽ tốn thời gian mà lợi ích không đáng kể.
+    + Thông thường:
+        + K = 5 là lựa chọn phổ biến nhất.
+        + K = 10 được dùng khi muốn đánh giá kỹ hơn nhưng chi phí tính toán cao hơn.
 ```
 ```bash
 Batch
