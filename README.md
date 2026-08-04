@@ -925,6 +925,13 @@ Các Thuật Toán ML phổ biến
 # 8. Model Training
 ```bash
 Training process
+    + Quy trình huấn luyện mô hình
+    + Forward Propagation
+    + Loss Function
+    + Backpropagation
+    + Optimizer
+    + Cập nhật Weights
+    + Lặp lại đến khi hội tụ
 ```
 ```bash
 Dataset Split (Phân chia dữ liệu): Mục đích của việc chia dataset là để đánh giá khả năng tổng quát hóa (generalization) của mô hình trên dữ liệu chưa từng nhìn thấy.
