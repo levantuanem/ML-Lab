@@ -934,6 +934,40 @@ Training process
     + Lặp lại đến khi hội tụ
 ```
 ```bash
+Batch
+    + Batch Size
+    + Mini-batch
+    + Batch Gradient Descent
+    + Stochastic Gradient Descent (SGD)
+    + Mini-batch Gradient Descent
+```
+```bash
+Epoch
+```
+```bash
+Loss Function: Hàm mất mát (Càng bé thì càng tốt)
+    + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
+    + Đối với bài toán regression: có 2 hàm loss phổ biến: 
+        + Loss L1:
+            + Least absolute deviations (Độ lệch tuyệt đối tối thiểu)
+            + Absolute error (Độ lệch tuyệt đối)
+            + Mean of these Absolute etuyệt(Trung bình dộ lệch tuyệt đối)  
+        + Loss L2:
+            + Least square errors(Sai số bình phương nhỏ nhất)
+            + Squared error (Sai số bình phương)
+            + Mean of these Squared error ( Trung bình của sai số bình phương)  
+        + Điểm khác nhau: 
+            + L1: Dự đoán 10 căn nhà sai số 1 triệu sẽ tương đương dự đoán 1 căn nhà sai số 10 triệu (Nếu xây dựng mô hình thật chính xác. càng chính xác càng tốt chấp nhận vài trường hợp đi sai hẵn đi). Muốn dự đoán thật chính xác thì dùng L1
+            + L2: Dự đoán 1 căn nhà sai số 10 triệu bằng 100 căn nhà sai số 1 triệu (Dùng loss L2 khi muốn tối thiểu hóa những sai số lớn. Kiểu chấp nhận sai số nhưng sai số phải nhỏ). Muốn sai số nhỏ thì dùng L2
+        + Huber loss: Nếu sai số nhỏ thì dùng L2, sai số lớn thì dùng L1
+```
+```bash
+Optimizer
+```
+```bash
+Learning rate
+```
+```bash
 Dataset Split (Phân chia dữ liệu): Mục đích của việc chia dataset là để đánh giá khả năng tổng quát hóa (generalization) của mô hình trên dữ liệu chưa từng nhìn thấy.
 + Training Set
     + Dùng để huấn luyện (train) mô hình.
@@ -991,35 +1025,6 @@ Dataset Split (Phân chia dữ liệu): Mục đích của việc chia dataset l
     + Thông thường:
         + K = 5 là lựa chọn phổ biến nhất.
         + K = 10 được dùng khi muốn đánh giá kỹ hơn nhưng chi phí tính toán cao hơn.
-```
-```bash
-Batch
-```
-```bash
-Epoch
-```
-```bash
-Loss Function: Hàm mất mát (Càng bé thì càng tốt)
-    + Loss được tính toán dựa trên sự khác biệt giữa prediction và label (khác biệt giữa giá trị dự đoán và giá trị thực tế)
-    + Đối với bài toán regression: có 2 hàm loss phổ biến: 
-        + Loss L1:
-            + Least absolute deviations (Độ lệch tuyệt đối tối thiểu)
-            + Absolute error (Độ lệch tuyệt đối)
-            + Mean of these Absolute etuyệt(Trung bình dộ lệch tuyệt đối)  
-        + Loss L2:
-            + Least square errors(Sai số bình phương nhỏ nhất)
-            + Squared error (Sai số bình phương)
-            + Mean of these Squared error ( Trung bình của sai số bình phương)  
-        + Điểm khác nhau: 
-            + L1: Dự đoán 10 căn nhà sai số 1 triệu sẽ tương đương dự đoán 1 căn nhà sai số 10 triệu (Nếu xây dựng mô hình thật chính xác. càng chính xác càng tốt chấp nhận vài trường hợp đi sai hẵn đi). Muốn dự đoán thật chính xác thì dùng L1
-            + L2: Dự đoán 1 căn nhà sai số 10 triệu bằng 100 căn nhà sai số 1 triệu (Dùng loss L2 khi muốn tối thiểu hóa những sai số lớn. Kiểu chấp nhận sai số nhưng sai số phải nhỏ). Muốn sai số nhỏ thì dùng L2
-        + Huber loss: Nếu sai số nhỏ thì dùng L2, sai số lớn thì dùng L1
-```
-```bash
-Optimizer
-```
-```bash
-Learning rate
 ```
 ---
 # 9. Model Evaluation
