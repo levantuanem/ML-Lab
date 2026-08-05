@@ -4,25 +4,14 @@ import seaborn as sns
 from src.features.build_features import build_features
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import (
-    classification_report,
-    confusion_matrix,
-    accuracy_score,
-    precision_score,
-    recall_score,
-    f1_score)
+from sklearn.metrics import (classification_report, confusion_matrix, accuracy_score, precision_score, recall_score, f1_score)
 
 def evaluate_model():
     # Chuẩn bị dữ liệu
     X, y = build_features()
-    x_train, x_test, y_train, y_test = train_test_split(
-        X, y,
-        test_size=0.2,
-        random_state=42,
-        stratify=y)
+    x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
     scaler = joblib.load(r"D:\AI_Projects\Project_1\models\scaler.pkl")
     x_test = scaler.transform(x_test)
-
     # Load model
     model = joblib.load(r"D:\AI_Projects\Project_1\models\random_forest.pkl")
     # Predict
