@@ -1143,3 +1143,118 @@ Overfitting
 + Transfer Learning
 ---
    
+---
+# 13. NLP: Natural Language Processing
+```bash
++ Library:
+    + nltk
+    + textblod
+    + spacy
++ 13.1. Classical NLP
+    + 13.1.1. Text preprocessing
+        + Step 1: Remove punctuations: Loại bỏ dấu câu (.,!?%@)
+        + Step 2: Lower text: Đổi thành chữ thường
+        + Step 3: Tokenization: Phân chia text thành word/ sentences
+        + Step 4: Remove stopwords: you, is, the, an
+        + Step 5: 
+            + Stemming: (Send = Sent = Sending)
+            + Lemmatization: Tốt hơn stemming
+        + Step 6: Handling special characters, numbers, URLs
+    + 13.1.2. Text representation: là quá trình chuyển văn bản thành dạng số (numeric vector) để Machine Learning Deep Learning có thể xử lý.
+        + 1: Bag of Words (BoW)
+            + Biểu diễn văn bản dựa trên tần suất xuất hiện của các từ.
+            + Không quan tâm đến thứ tự của từ.
+            + Nhược điểm:
+                + Không hiểu ngữ nghĩa.
+                + Không quan tâm thứ tự từ.
+                + Vector có thể rất lớn và sparse.
+        + 2: N-grams: Biểu diễn văn bản bằng các chuỗi gồm N từ liên tiếp.
+            "I love machine learning"
+            + Unigram (N = 1): → ["I", "love", "machine", "learning"]
+            + Bigram (N = 2): → ["I love", "love machine", "machine learning"]
+            + Trigram (N = 3): → ["I love machine", "love machine learning"]
+            => N-grams giúp giữ lại một phần thông tin về thứ tự/ngữ cảnh của từ, tốt hơn BoW đơn thuần
+        + 3: TF-IDF (Term frequency-Inverse Document Frequency):
+            + Mục tiêu: xác định mức độ quan trọng của một từ trong một document so với toàn bộ corpus
+            + TF: Term frequency: Tần số xuất hiện của 1 word trong 1 document
+            + IDF: Inverse Document Frequency: Mức độ phổ biến/ hiếm của 1 word trong toàn bộ các document
+                + Từ xuất hiện trong nhiều documents → IDF thấp.
+                + Từ xuất hiện trong ít documents → IDF cao.
+            => Từ xuất hiện nhiều trong document nhưng hiếm trong corpus → TF-IDF cao.
+            => Từ xuất hiện phổ biến ở hầu hết documents → TF-IDF thấp.
+        + 4: One-hot encoding cho từ
+            + Mỗi từ được biểu diễn bằng một vector nhị phân.
+            + Chỉ có một phần tử = 1, các phần tử còn lại = 0.
+            + Nhược điểm:
+                + Vector có chiều rất lớn khi vocabulary lớn.
+                + Sparse.
+                + Không thể hiện mối quan hệ/ngữ nghĩa giữa các từ.
+    + 13.1.3. Classical Machine Learning cho NLP
+        + Naive Bayes
+        + Logistic Regression
+        + SVM
+        + Decision Tree / Random Forest
+    + 13.1.4. Word Embedding
+        + Word2Vec
+        + CBOW
+        + Skip-gram
+        + GloVe
+        + FastText
+
++ 13.2. Deep Learning for NLP
+    + 13.2.1. Neural Network cơ bản
+        + Embedding layer
+        + Feed Forward Neural Network
+    + 13.2.2. RNN
+        + Recurrent Neural Network
+        + Vanishing / Exploding Gradient
+    + 13.2.3. LSTM
+        + Long Short-Term Memory
+        + Cell state
+        + Forget gate
+        + Input gate
+        + Output gate
+    + 13.2.4. GRU
+        + Gated Recurrent Unit
+        + So sánh GRU và LSTM
+    + 13.2.5. CNN for NLP
+        + 1D Convolution
+        + Text classification
+    + 13.2.6. Attention Mechanism
+        + Query
+        + Key
+        + Value
+        + Self-Attention
+    + 13.2.7. Transformer
+        + Encoder
+        + Decoder
+        + Positional Encoding
+        + Multi-Head Attention
+    + 13.2.8. Pre-trained Language Models
+        + BERT
+        + RoBERTa
+        + GPT
+        + T5
+    + 13.2.9. Fine-tuning
+        + Transfer Learning
+        + Fine-tuning pretrained models
+        + Hugging Face Transformers
+
++ 13.3. Các bài toán NLP phổ biến
+    + Text Classification
+    + Sentiment Analysis
+    + Spam Detection
+    + Named Entity Recognition (NER)
+    + Part-of-Speech Tagging (POS)
+    + Text Summarization
+    + Machine Translation
+    + Question Answering
+    + Text Generation
+    + Information Extraction
+
+Text preprocessing → BoW → TF-IDF → Classical ML → Word2Vec → RNN → LSTM/GRU → Attention → Transformer → BERT/GPT → Fine-tuning
+```
+
+```bash
+```
+---
