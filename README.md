@@ -1,5 +1,50 @@
 # Project_1
-Machine Learning Project
+Machine Learning Project:
+DATA
+✓ Missing values
+✓ Duplicates
+✓ Categorical encoding
+✓ Outlier
+✓ Data leakage
+
+FEATURE
+✓ Scaling
+✓ Feature selection
+✓ Feature importance
+
+MODEL
+✓ Logistic Regression
+✓ Random Forest
+✓ Gradient Boosting
+✓ SVM
+
+IMBALANCE
+✓ Class weights
+✓ RandomOverSampler
+✓ SMOTE
+
+VALIDATION
+✓ Stratified K-Fold
+✓ Cross Validation
+
+OPTIMIZATION
+✓ GridSearchCV
+✓ RandomizedSearchCV
+
+ROBUSTNESS
+✓ Confusion Matrix
+✓ Precision
+✓ Recall
+✓ F1
+✓ ROC-AUC
+✓ PR-AUC
+
+ENGINEERING
+✓ Pipeline
+✓ Config
+✓ Logging
+✓ Model saving
+✓ Reproducibility
 ## Environment
 Python 3.13
 ## Libraries
