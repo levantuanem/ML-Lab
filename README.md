@@ -1301,5 +1301,186 @@ Text preprocessing → BoW → TF-IDF → Classical ML → Word2Vec → RNN → 
 ```
 
 ```bash
+1. Chọn Machine Learning Model dựa trên Business Domain
+Không chọn model chỉ dựa vào Accuracy/R² cao nhất. Phải xét yêu cầu thực tế của bài toán.
+    1.1. Metric — Cần đánh giá model bằng gì?
+        Classification:
+            Accuracy
+            Precision
+            Recall
+            F1-score
+            ROC-AUC
+        Regression:
+            MAE
+            MSE
+            RMSE
+            R²
+Metric phải phù hợp với mục tiêu của business.
+
+    1.2. Priority — Yếu tố nào được ưu tiên?
+        Ngoài metric phải xét:
+            Speed / Latency: model phải phản hồi nhanh không?
+            Memory: model có vừa RAM/Flash của thiết bị không?
+            Accuracy: độ chính xác yêu cầu bao nhiêu?
+            Power consumption: thiết bị có giới hạn năng lượng không?
+            Model size: model có quá lớn để deploy không?
+            Compute: CPU/GPU/NPU có đủ khả năng chạy không?
+        Đặc biệt với Edge AI / Automotive:
+        Không phải model accuracy cao nhất là model tốt nhất.
+        Mà là:
+        Accuracy + Latency + Memory + Power + Compute + Model size
+        ↓
+        Final Model
+    1.3. Interpretability
+        Một số kỹ thuật:
+        Feature Importance
+        SHAP
+        LIME
+        Attention visualization
+
+3. Underfitting và Overfitting
+    3.1. Underfitting
+        Model quá đơn giản, không học được pattern của dữ liệu.
+
+        Model quá đơn giản
+            ↓
+        Không học đủ pattern
+            ↓
+        Training error cao
+        Validation/Test error cao
+            ↓
+        Bias cao
+            ↓
+        Underfitting
+    3.2. Optimal Fitting
+        Model có độ phức tạp vừa đủ:
+        Học được pattern
+            +
+        Không học noise
+            ↓
+        Generalization tốt
+        Đây là trạng thái mong muốn.
+        Mục tiêu không phải làm training error = 0 mà là dự đoán tốt trên dữ liệu chưa từng thấy.
+    3.3. Overfitting
+        Model quá phức tạp, học cả noise của training data.
+        Model quá phức tạp
+            ↓
+        Học cả noise
+            ↓
+        Training error rất thấp
+        Test error cao
+            ↓
+        Variance cao
+            ↓
+        Overfitting
+
+4. Bias–Variance
+Bias
+Bias = model quá đơn giản → không học đủ quy luật.
+Bias cao
+   ↓
+Underfitting
+Variance
+Variance = model quá nhạy với training data.
+Nếu thay đổi training data một chút mà model thay đổi rất nhiều → variance cao.
+Variance cao
+     ↓
+Overfitting
+Bias–Variance Tradeoff
+Khi tăng model complexity:
+Model complexity ↑
+Bias      ↓
+Variance  ↑
+Do đó cần tìm điểm cân bằng:
+Underfitting       Optimal       Overfitting
+     ↓                ↓               ↓
+Bias HIGH          Balance       Variance HIGH
+Nhớ nhanh:
+Bias cao → học chưa đủ.
+Variance cao → học quá kỹ.
+
+5. Training Error vs Test Error
+Trạng thái	Training Error	Test Error	Nguyên nhân
+Underfitting	Cao	Cao	Bias cao
+Optimal	Thấp	Thấp	Cân bằng tốt
+Overfitting	Rất thấp	Cao	Variance cao
+Điểm quan trọng:
+Overfitting không có nghĩa model train kém.
+Model train rất tốt trên training data nhưng generalization kém.
+
+6. Regularization
+
+Regularization = kỹ thuật kiểm soát độ phức tạp của model để giảm Overfitting.
+
+Loss thông thường:
+
+Loss=Training Error
+
+Regularization:
+
+Loss=Training Error+λ×Complexity
+	​
+
+
+Trong đó:
+
+Training Error: model dự đoán sai bao nhiêu
+Complexity: độ phức tạp của model
+λ: mức độ regularization
+Ý tưởng:
+
+Model vừa phải fit data, vừa bị phạt nếu trở nên quá phức tạp.
+
+7. Ridge, Lasso, Elastic Net
+Ridge — L2 Regularization
+Tác dụng:
+Làm coefficients nhỏ lại
+Giảm variance
+Giúp chống overfitting
+Thường không đưa coefficient chính xác về 0
+θ1 = 10 → 7
+θ2 = 8  → 5
+θ3 = 20 → 2
+Lasso — L1 Regularization
+Tác dụng:
+Giảm coefficients
+Một số coefficient có thể → 0
+Có thể thực hiện Feature Selection
+→ Feature tương ứng với θ2, θ4 có thể bị loại bỏ.
+Elastic Net
+Kết hợp L1 và L2:
+8. Regularization và Bias–Variance
+Tăng regularization:
+Regularization ↑
+       ↓
+Model complexity ↓
+       ↓
+Variance ↓
+       ↓
+Overfitting ↓
+Nhưng nếu quá mạnh:
+Regularization quá mạnh
+       ↓
+Model quá đơn giản
+       ↓
+Bias ↑
+       ↓
+Underfitting
+Vì vậy:
+Regularization không càng lớn càng tốt. Phải tìm mức tối ưu.
+9. Hyperparameter λ / alpha
+
+Ví dụ Ridge:
+from sklearn.linear_model import Ridge
+model = Ridge(alpha=1.0)
+Trong sklearn:
+alpha ≈ λ
+Có thể tìm alpha tốt nhất:
+param_grid = {
+    "alpha": [0.001, 0.01, 0.1, 1, 10, 100]
+}
+Sau đó dùng:
+GridSearchCV
+để tìm hyperparameter tối ưu.
 ```
 ---
