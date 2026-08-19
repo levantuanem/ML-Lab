@@ -1375,29 +1375,29 @@ Metric phải phù hợp với mục tiêu của business.
         Overfitting
 
 4. Bias–Variance
-Bias
-Bias = model quá đơn giản → không học đủ quy luật.
-Bias cao
-   ↓
-Underfitting
-Variance
-Variance = model quá nhạy với training data.
-Nếu thay đổi training data một chút mà model thay đổi rất nhiều → variance cao.
-Variance cao
-     ↓
-Overfitting
-Bias–Variance Tradeoff
-Khi tăng model complexity:
-Model complexity ↑
-Bias      ↓
-Variance  ↑
-Do đó cần tìm điểm cân bằng:
-Underfitting       Optimal       Overfitting
-     ↓                ↓               ↓
-Bias HIGH          Balance       Variance HIGH
-Nhớ nhanh:
-Bias cao → học chưa đủ.
-Variance cao → học quá kỹ.
+    4.1 Bias
+        Bias = model quá đơn giản → không học đủ quy luật.
+        Bias cao
+        ↓
+        Underfitting
+    4.2 Variance
+        Variance = model quá nhạy với training data.
+        Nếu thay đổi training data một chút mà model thay đổi rất nhiều → variance cao.
+        Variance cao
+            ↓
+        Overfitting
+    4.3 Bias–Variance Tradeoff
+        Khi tăng model complexity:
+        Model complexity ↑
+        Bias      ↓
+        Variance  ↑
+        Do đó cần tìm điểm cân bằng:
+        Underfitting       Optimal       Overfitting
+            ↓                ↓               ↓
+        Bias HIGH          Balance       Variance HIGH
+        Nhớ nhanh:
+        Bias cao → học chưa đủ.
+        Variance cao → học quá kỹ.
 
 5. Training Error vs Test Error
 Trạng thái	Training Error	Test Error	Nguyên nhân
@@ -1409,19 +1409,13 @@ Overfitting không có nghĩa model train kém.
 Model train rất tốt trên training data nhưng generalization kém.
 
 6. Regularization
-
 Regularization = kỹ thuật kiểm soát độ phức tạp của model để giảm Overfitting.
-
 Loss thông thường:
-
 Loss=Training Error
-
 Regularization:
 
 Loss=Training Error+λ×Complexity
 	​
-
-
 Trong đó:
 
 Training Error: model dự đoán sai bao nhiêu
